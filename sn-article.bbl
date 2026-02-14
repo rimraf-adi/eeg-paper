@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{13}
+\begin{thebibliography}{14}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -83,22 +83,6 @@
 \endbibitem
 
 %%% 3
-\bibitem[\protect\citeauthoryear{Pisani et~al.}{2012}]{pisani2012}
-\begin{barticle}
-\bauthor{\bsnm{Pisani}, \binits{F.}},
-\bauthor{\bsnm{Cereminara}, \binits{C.}},
-\bauthor{\bsnm{Fusco}, \binits{C.}},
-\bauthor{\bsnm{Sisti}, \binits{L.}}:
-\batitle{Neonatal seizures and postneonatal epilepsy: a 7-y follow-up study}.
-\bjtitle{Pediatric Research}
-\bvolume{72},
-\bfpage{186}--\blpage{193}
-(\byear{2012})
-\doiurl{10.1038/pr.2012.66}
-\end{barticle}
-\endbibitem
-
-%%% 4
 \bibitem[\protect\citeauthoryear{Glass et~al.}{2009}]{glass2009}
 \begin{barticle}
 \bauthor{\bsnm{Glass}, \binits{H.C.}},
@@ -117,7 +101,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 5
+%%% 4
 \bibitem[\protect\citeauthoryear{Shellhaas et~al.}{2011}]{shellhaas2011}
 \begin{barticle}
 \bauthor{\bsnm{Shellhaas}, \binits{R.A.}},
@@ -139,7 +123,41 @@
 \end{barticle}
 \endbibitem
 
+%%% 5
+\bibitem[\protect\citeauthoryear{Boylan et~al.}{2013}]{boylan2013}
+\begin{barticle}
+\bauthor{\bsnm{Boylan}, \binits{G.B.}},
+\bauthor{\bsnm{Stevenson}, \binits{N.J.}},
+\bauthor{\bsnm{Vanhatalo}, \binits{S.}}:
+\batitle{Monitoring neonatal seizures}.
+\bjtitle{Seminars in Fetal and Neonatal Medicine}
+\bvolume{18}(\bissue{4}),
+\bfpage{202}--\blpage{208}
+(\byear{2013})
+\doiurl{10.1016/j.siny.2013.04.004}
+\end{barticle}
+\endbibitem
+
 %%% 6
+\bibitem[\protect\citeauthoryear{Murray et~al.}{2008}]{murray2008}
+\begin{barticle}
+\bauthor{\bsnm{Murray}, \binits{D.M.}},
+\bauthor{\bsnm{Boylan}, \binits{G.B.}},
+\bauthor{\bsnm{Ali}, \binits{I.}},
+\bauthor{\bsnm{Ryan}, \binits{C.A.}},
+\bauthor{\bsnm{Murphy}, \binits{B.P.}},
+\bauthor{\bsnm{Connolly}, \binits{S.}}:
+\batitle{Defining the gap between electrographic seizure burden, clinical
+  expression and staff recognition of neonatal seizures}.
+\bjtitle{Archives of Disease in Childhood -- Fetal and Neonatal Edition}
+\bvolume{93}(\bissue{3}),
+\bfpage{187}--\blpage{191}
+(\byear{2008})
+\doiurl{10.1136/adc.2005.086314}
+\end{barticle}
+\endbibitem
+
+%%% 7
 \bibitem[\protect\citeauthoryear{Stevenson et~al.}{2015}]{stevenson2015}
 \begin{barticle}
 \bauthor{\bsnm{Stevenson}, \binits{N.J.}},
@@ -158,7 +176,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 7
+%%% 8
 \bibitem[\protect\citeauthoryear{Temko et~al.}{2011}]{temko2011}
 \begin{barticle}
 \bauthor{\bsnm{Temko}, \binits{A.}},
@@ -175,7 +193,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 8
+%%% 9
 \bibitem[\protect\citeauthoryear{Greene et~al.}{2008}]{greene2008}
 \begin{barticle}
 \bauthor{\bsnm{Greene}, \binits{B.R.}},
@@ -194,7 +212,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 9
+%%% 10
 \bibitem[\protect\citeauthoryear{Ansari et~al.}{2019}]{ansari2019}
 \begin{barticle}
 \bauthor{\bsnm{Ansari}, \binits{A.H.}},
@@ -212,7 +230,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 10
+%%% 11
 \bibitem[\protect\citeauthoryear{Kashefi~Amiri et~al.}{2025}]{kashefiamiri2025}
 \begin{botherref}
 \oauthor{\bsnm{Kashefi~Amiri}, \binits{H.}},
@@ -227,7 +245,7 @@ Scientific Reports
 \end{botherref}
 \endbibitem
 
-%%% 11
+%%% 12
 \bibitem[\protect\citeauthoryear{Pan et~al.}{2024}]{pan2024}
 \begin{barticle}
 \bauthor{\bsnm{Pan}, \binits{Y.}},
@@ -245,7 +263,7 @@ Scientific Reports
 \end{barticle}
 \endbibitem
 
-%%% 12
+%%% 13
 \bibitem[\protect\citeauthoryear{Stevenson et~al.}{2019}]{stevenson2017}
 \begin{barticle}
 \bauthor{\bsnm{Stevenson}, \binits{N.J.}},
@@ -257,32 +275,26 @@ Scientific Reports
 \bvolume{6},
 \bfpage{190039}
 (\byear{2019})
-\doiurl{10.1038/sdata.2019.39}
+\doiurl{10.1038/sdata.2019.39} .
+\bcomment{Describes spectral characteristics used in seizure analysis}
 \end{barticle}
 \endbibitem
 
-%%% 13
-\bibitem[\protect\citeauthoryear{Donoghue et~al.}{2020}]{donoghue2020}
+%%% 14
+\bibitem[\protect\citeauthoryear{Lloyd et~al.}{2021}]{lloyd2021}
 \begin{barticle}
-\bauthor{\bsnm{Donoghue}, \binits{T.}},
-\bauthor{\bsnm{Haller}, \binits{M.}},
-\bauthor{\bsnm{Peterson}, \binits{E.J.}},
-\bauthor{\bsnm{Varma}, \binits{P.}},
-\bauthor{\bsnm{Sebastian}, \binits{P.}},
-\bauthor{\bsnm{Gao}, \binits{R.}},
-\bauthor{\bsnm{Noto}, \binits{T.}},
-\bauthor{\bsnm{Lara}, \binits{A.H.}},
-\bauthor{\bsnm{Walz}, \binits{J.D.}},
-\bauthor{\bsnm{Knight}, \binits{R.T.}},
-\bauthor{\bsnm{Shestyuk}, \binits{A.}},
-\bauthor{\bsnm{Voytek}, \binits{B.}}:
-\batitle{Parameterizing neural power spectra into periodic and aperiodic
-  components}.
-\bjtitle{Nature Neuroscience}
-\bvolume{23}(\bissue{12}),
-\bfpage{1655}--\blpage{1665}
-(\byear{2020})
-\doiurl{10.1038/s41593-020-00744-x}
+\bauthor{\bsnm{Lloyd}, \binits{R.O.}},
+\bauthor{\bsnm{O'Toole}, \binits{J.M.}},
+\bauthor{\bsnm{Pavlidis}, \binits{E.}},
+\bauthor{\bsnm{Filan}, \binits{P.M.}},
+\bauthor{\bsnm{Boylan}, \binits{G.B.}}:
+\batitle{Electrographic seizures during the early postnatal period in preterm
+  infants}.
+\bjtitle{The Journal of Pediatrics}
+\bvolume{229},
+\bfpage{148}--\blpage{1551}
+(\byear{2021})
+\doiurl{10.1016/j.jpeds.2020.09.067}
 \end{barticle}
 \endbibitem
 
