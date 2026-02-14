@@ -22,43 +22,62 @@
 \citation{pan2024}
 \citation{stevenson2017}
 \citation{lloyd2021}
+\citation{sinha2016}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Methods}{3}{section.2}\protected@file@percent }
 \newlabel{sec11}{{2}{3}{Methods}{section.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Dataset}{3}{subsection.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Log-transformed Power Spectral Density and Curve Fitting}{3}{subsection.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Empirical Mode Decomposition feature set}{4}{subsection.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Evaluation}{4}{subsection.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3}Results}{5}{section.3}\protected@file@percent }
+\newlabel{subsec:dataset}{{2.1}{3}{Dataset}{subsection.2.1}{}}
+\citation{sinha2016}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Log-transformed Power Spectral Density and Curve Fitting}{4}{subsection.2.2}\protected@file@percent }
+\newlabel{subsec:psd}{{2.2}{4}{Log-transformed Power Spectral Density and Curve Fitting}{subsection.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Empirical Mode Decomposition Feature Set}{4}{subsection.2.3}\protected@file@percent }
+\newlabel{subsec:emd}{{2.3}{4}{Empirical Mode Decomposition Feature Set}{subsection.2.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Evaluation}{5}{subsection.2.4}\protected@file@percent }
+\newlabel{subsec:evaluation}{{2.4}{5}{Evaluation}{subsection.2.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.1}Dimensionality Reduction and Statistical Testing}{5}{subsubsection.2.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.2}Classification Architecture}{5}{subsubsection.2.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.3}Post-processing and Threshold Optimisation}{6}{subsubsection.2.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.4}Class-Imbalance Management}{6}{subsubsection.2.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Results}{6}{section.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Top 5 trials -- PCA Frequency Features}}{6}{table.caption.3}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:freq_t_stat}{{1a}{5}{Frequency Features : T-statistic}{figure.caption.2}{}}
-\newlabel{sub@fig:freq_t_stat}{{a}{5}{Frequency Features : T-statistic}{figure.caption.2}{}}
-\newlabel{fig:freq_significance}{{1b}{5}{Frequency Features : -log(p)}{figure.caption.2}{}}
-\newlabel{sub@fig:freq_significance}{{b}{5}{Frequency Features : -log(p)}{figure.caption.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Frequency-domain Results}}{5}{figure.caption.2}\protected@file@percent }
-\newlabel{fig:emd_t_stat}{{2a}{6}{EMD features : T-statistic}{figure.caption.3}{}}
-\newlabel{sub@fig:emd_t_stat}{{a}{6}{EMD features : T-statistic}{figure.caption.3}{}}
-\newlabel{fig:emd_significance}{{2b}{6}{EMD Features : -log(p)}{figure.caption.3}{}}
-\newlabel{sub@fig:emd_significance}{{b}{6}{EMD Features : -log(p)}{figure.caption.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces EMD Results}}{6}{figure.caption.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusion}{6}{section.4}\protected@file@percent }
-\newlabel{sec13}{{4}{6}{Conclusion}{section.4}{}}
-\@writefile{toc}{\contentsline {subparagraph}{Supplementary information}{7}{section*.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subparagraph}{Acknowledgements}{7}{section*.5}\protected@file@percent }
+\newlabel{tab:freq_results}{{1}{6}{Top 5 trials -- PCA Frequency Features}{table.caption.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Top 5 trials -- PCA EMD Features}}{7}{table.caption.5}\protected@file@percent }
+\newlabel{tab:emd_results}{{2}{7}{Top 5 trials -- PCA EMD Features}{table.caption.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusion}{7}{section.4}\protected@file@percent }
+\newlabel{sec13}{{4}{7}{Conclusion}{section.4}{}}
 \bibdata{sn-bibliography}
 \bibcite{glass2016}{{1}{2016}{{Glass et~al.}}{{}}}
+\newlabel{fig:radar_freq}{{1a}{8}{Frequency Features}{figure.caption.6}{}}
+\newlabel{sub@fig:radar_freq}{{a}{8}{Frequency Features}{figure.caption.6}{}}
+\newlabel{fig:radar_emd}{{1b}{8}{EMD Features}{figure.caption.6}{}}
+\newlabel{sub@fig:radar_emd}{{b}{8}{EMD Features}{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Radar charts illustrating the performance profile of the top trials. The frequency-domain pipeline (a) demonstrates a more balanced profile with consistently high Area Under the Curve (AUC) and Accuracy. In contrast, the EMD pipeline (b) exhibits a distinct skew towards Recall, indicating unmatched sensitivity to seizure events despite lower overall precision.}}{8}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:radar_plots}{{1}{8}{Radar charts illustrating the performance profile of the top trials. The frequency-domain pipeline (a) demonstrates a more balanced profile with consistently high Area Under the Curve (AUC) and Accuracy. In contrast, the EMD pipeline (b) exhibits a distinct skew towards Recall, indicating unmatched sensitivity to seizure events despite lower overall precision}{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subparagraph}{Supplementary information}{8}{section*.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subparagraph}{Acknowledgements}{8}{section*.10}\protected@file@percent }
 \bibcite{ronen2007}{{2}{2007}{{Ronen et~al.}}{{}}}
 \bibcite{glass2009}{{3}{2009}{{Glass et~al.}}{{}}}
+\newlabel{fig:freq_t_stat}{{2a}{9}{Frequency features: t-statistic per principal component}{figure.caption.7}{}}
+\newlabel{sub@fig:freq_t_stat}{{a}{9}{Frequency features: t-statistic per principal component}{figure.caption.7}{}}
+\newlabel{fig:freq_significance}{{2b}{9}{Frequency features: $-\log (p)$ per principal component}{figure.caption.7}{}}
+\newlabel{sub@fig:freq_significance}{{b}{9}{Frequency features: $-\log (p)$ per principal component}{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Statistical comparison of PCA-reduced frequency-domain features between seizure and non-seizure epochs.}}{9}{figure.caption.7}\protected@file@percent }
 \bibcite{shellhaas2011}{{4}{2011}{{Shellhaas et~al.}}{{}}}
 \bibcite{boylan2013}{{5}{2013}{{Boylan et~al.}}{{}}}
+\newlabel{fig:emd_t_stat}{{3a}{10}{EMD features: t-statistic per principal component}{figure.caption.8}{}}
+\newlabel{sub@fig:emd_t_stat}{{a}{10}{EMD features: t-statistic per principal component}{figure.caption.8}{}}
+\newlabel{fig:emd_significance}{{3b}{10}{EMD features: $-\log (p)$ per principal component}{figure.caption.8}{}}
+\newlabel{sub@fig:emd_significance}{{b}{10}{EMD features: $-\log (p)$ per principal component}{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Statistical comparison of PCA-reduced EMD features between seizure and non-seizure epochs.}}{10}{figure.caption.8}\protected@file@percent }
 \bibcite{murray2008}{{6}{2008}{{Murray et~al.}}{{}}}
 \bibcite{stevenson2015}{{7}{2015}{{Stevenson et~al.}}{{}}}
 \bibcite{temko2011}{{8}{2011}{{Temko et~al.}}{{}}}
 \bibcite{greene2008}{{9}{2008}{{Greene et~al.}}{{}}}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Section title of first appendix}{8}{appendix.1.A}\protected@file@percent }
-\newlabel{secA1}{{A}{8}{Section title of first appendix}{appendix.1.A}{}}
 \bibcite{ansari2019}{{10}{2019}{{Ansari et~al.}}{{}}}
 \bibcite{kashefiamiri2025}{{11}{2025}{{Kashefi~Amiri et~al.}}{{}}}
 \bibcite{pan2024}{{12}{2024}{{Pan et~al.}}{{}}}
 \bibcite{stevenson2017}{{13}{2019}{{Stevenson et~al.}}{{}}}
 \bibcite{lloyd2021}{{14}{2021}{{Lloyd et~al.}}{{}}}
-\gdef \@abspage@last{9}
+\bibcite{sinha2016}{{15}{2016}{{Sinha et~al.}}{{}}}
+\gdef \@abspage@last{12}

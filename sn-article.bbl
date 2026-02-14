@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{14}
+\begin{thebibliography}{15}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -295,6 +295,24 @@ Scientific Reports
 \bfpage{148}--\blpage{1551}
 (\byear{2021})
 \doiurl{10.1016/j.jpeds.2020.09.067}
+\end{barticle}
+\endbibitem
+
+%%% 15
+\bibitem[\protect\citeauthoryear{Sinha et~al.}{2016}]{sinha2016}
+\begin{barticle}
+\bauthor{\bsnm{Sinha}, \binits{S.}},
+\bauthor{\bsnm{Rao}, \binits{N.A.}},
+\bauthor{\bsnm{Chinni}, \binits{B.K.}},
+\bauthor{\bsnm{Dogra}, \binits{V.S.}}:
+\batitle{Evaluation of frequency domain analysis of a multiwavelength
+  photoacoustic signal for differentiating malignant from benign and normal
+  prostates: Ex vivo study with human prostates}.
+\bjtitle{Journal of Ultrasound in Medicine}
+\bvolume{35}(\bissue{10}),
+\bfpage{2165}--\blpage{2177}
+(\byear{2016})
+\doiurl{10.7863/ultra.15.11067}
 \end{barticle}
 \endbibitem
 
