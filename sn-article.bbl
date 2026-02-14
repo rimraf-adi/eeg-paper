@@ -1,0 +1,289 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{13}
+% BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
+\ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
+\ifx \binits  \undefined \def \binits#1{#1}\fi
+\ifx \bauthor  \undefined \def \bauthor#1{#1}\fi
+\ifx \batitle  \undefined \def \batitle#1{#1}\fi
+\ifx \bjtitle  \undefined \def \bjtitle#1{#1}\fi
+\ifx \bvolume  \undefined \def \bvolume#1{\textbf{#1}}\fi
+\ifx \byear  \undefined \def \byear#1{#1}\fi
+\ifx \bissue  \undefined \def \bissue#1{#1}\fi
+\ifx \bfpage  \undefined \def \bfpage#1{#1}\fi
+\ifx \blpage  \undefined \def \blpage #1{#1}\fi
+\ifx \burl  \undefined \def \burl#1{\textsf{#1}}\fi
+\ifx \doiurl  \undefined \def \doiurl#1{\url{https://doi.org/#1}}\fi
+\ifx \betal  \undefined \def \betal{\textit{et al.}}\fi
+\ifx \binstitute  \undefined \def \binstitute#1{#1}\fi
+\ifx \binstitutionaled  \undefined \def \binstitutionaled#1{#1}\fi
+\ifx \bctitle  \undefined \def \bctitle#1{#1}\fi
+\ifx \beditor  \undefined \def \beditor#1{#1}\fi
+\ifx \bpublisher  \undefined \def \bpublisher#1{#1}\fi
+\ifx \bbtitle  \undefined \def \bbtitle#1{#1}\fi
+\ifx \bedition  \undefined \def \bedition#1{#1}\fi
+\ifx \bseriesno  \undefined \def \bseriesno#1{#1}\fi
+\ifx \blocation  \undefined \def \blocation#1{#1}\fi
+\ifx \bsertitle  \undefined \def \bsertitle#1{#1}\fi
+\ifx \bsnm \undefined \def \bsnm#1{#1}\fi
+\ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
+\ifx \bparticle \undefined \def \bparticle#1{#1}\fi
+\ifx \barticle \undefined \def \barticle#1{#1}\fi
+\bibcommenthead
+\ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
+\ifx \botherref \undefined \def \botherref #1{#1}\fi
+\ifx \url \undefined \def \url#1{\textsf{#1}}\fi
+\ifx \bchapter \undefined \def \bchapter#1{#1}\fi
+\ifx \bbook \undefined \def \bbook#1{#1}\fi
+\ifx \bcomment \undefined \def \bcomment#1{#1}\fi
+\ifx \oauthor \undefined \def \oauthor#1{#1}\fi
+\ifx \citeauthoryear \undefined \def \citeauthoryear#1{#1}\fi
+\ifx \endbibitem  \undefined \def \endbibitem {}\fi
+\ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
+\ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
+\csname PreBibitemsHook\endcsname
+
+%%% 1
+\bibitem[\protect\citeauthoryear{Glass et~al.}{2016}]{glass2016}
+\begin{barticle}
+\bauthor{\bsnm{Glass}, \binits{H.C.}},
+\bauthor{\bsnm{Shellhaas}, \binits{R.A.}},
+\bauthor{\bsnm{Wusthoff}, \binits{C.J.}},
+\bauthor{\bsnm{Chang}, \binits{T.}},
+\bauthor{\bsnm{Abend}, \binits{N.S.}},
+\bauthor{\bsnm{Chu}, \binits{C.J.}},
+\bauthor{\bsnm{Cilio}, \binits{M.R.}},
+\bauthor{\bsnm{Glidden}, \binits{D.V.}},
+\bauthor{\bsnm{Bonifacio}, \binits{S.L.}},
+\bauthor{\bsnm{Massey}, \binits{S.}}, \betal:
+\batitle{Contemporary profile of seizures in neonates: a prospective cohort
+  study}.
+\bjtitle{The Journal of Pediatrics}
+\bvolume{174},
+\bfpage{98}--\blpage{1031}
+(\byear{2016})
+\doiurl{10.1016/j.jpeds.2016.03.035}
+\end{barticle}
+\endbibitem
+
+%%% 2
+\bibitem[\protect\citeauthoryear{Ronen et~al.}{2007}]{ronen2007}
+\begin{barticle}
+\bauthor{\bsnm{Ronen}, \binits{G.M.}},
+\bauthor{\bsnm{Buckley}, \binits{D.}},
+\bauthor{\bsnm{Penney}, \binits{S.}},
+\bauthor{\bsnm{Streiner}, \binits{D.L.}}:
+\batitle{Long-term prognosis in children with neonatal seizures}.
+\bjtitle{Neurology}
+\bvolume{69}(\bissue{19}),
+\bfpage{1816}--\blpage{1822}
+(\byear{2007})
+\doiurl{10.1212/01.wnl.0000279335.85797.2c}
+\end{barticle}
+\endbibitem
+
+%%% 3
+\bibitem[\protect\citeauthoryear{Pisani et~al.}{2012}]{pisani2012}
+\begin{barticle}
+\bauthor{\bsnm{Pisani}, \binits{F.}},
+\bauthor{\bsnm{Cereminara}, \binits{C.}},
+\bauthor{\bsnm{Fusco}, \binits{C.}},
+\bauthor{\bsnm{Sisti}, \binits{L.}}:
+\batitle{Neonatal seizures and postneonatal epilepsy: a 7-y follow-up study}.
+\bjtitle{Pediatric Research}
+\bvolume{72},
+\bfpage{186}--\blpage{193}
+(\byear{2012})
+\doiurl{10.1038/pr.2012.66}
+\end{barticle}
+\endbibitem
+
+%%% 4
+\bibitem[\protect\citeauthoryear{Glass et~al.}{2009}]{glass2009}
+\begin{barticle}
+\bauthor{\bsnm{Glass}, \binits{H.C.}},
+\bauthor{\bsnm{Glidden}, \binits{D.}},
+\bauthor{\bsnm{Jeremy}, \binits{R.J.}},
+\bauthor{\bsnm{Barkovich}, \binits{A.J.}},
+\bauthor{\bsnm{Ferriero}, \binits{D.M.}},
+\bauthor{\bsnm{Miller}, \binits{S.P.}}:
+\batitle{Clinical neonatal seizures are independently associated with outcome
+  in infants at risk for hypoxic-ischemic brain injury}.
+\bjtitle{The Journal of Pediatrics}
+\bvolume{155}(\bissue{3}),
+\bfpage{318}--\blpage{323}
+(\byear{2009})
+\doiurl{10.1016/j.jpeds.2009.03.040}
+\end{barticle}
+\endbibitem
+
+%%% 5
+\bibitem[\protect\citeauthoryear{Shellhaas et~al.}{2011}]{shellhaas2011}
+\begin{barticle}
+\bauthor{\bsnm{Shellhaas}, \binits{R.A.}},
+\bauthor{\bsnm{Chang}, \binits{T.}},
+\bauthor{\bsnm{Tsuchida}, \binits{T.}},
+\bauthor{\bsnm{Scher}, \binits{M.S.}},
+\bauthor{\bsnm{Riviello}, \binits{J.J.}},
+\bauthor{\bsnm{Abend}, \binits{N.S.}},
+\bauthor{\bsnm{Nguyen}, \binits{S.}},
+\bauthor{\bsnm{Wusthoff}, \binits{C.J.}},
+\bauthor{\bsnm{Clancy}, \binits{R.R.}}:
+\batitle{The {American Clinical Neurophysiology Society}'s guideline on
+  continuous electroencephalography monitoring in neonates}.
+\bjtitle{Journal of Clinical Neurophysiology}
+\bvolume{28}(\bissue{6}),
+\bfpage{611}--\blpage{617}
+(\byear{2011})
+\doiurl{10.1097/WNP.0b013e3182399f76}
+\end{barticle}
+\endbibitem
+
+%%% 6
+\bibitem[\protect\citeauthoryear{Stevenson et~al.}{2015}]{stevenson2015}
+\begin{barticle}
+\bauthor{\bsnm{Stevenson}, \binits{N.J.}},
+\bauthor{\bsnm{Clancy}, \binits{R.R.}},
+\bauthor{\bsnm{Vanhatalo}, \binits{S.}},
+\bauthor{\bsnm{Rosén}, \binits{I.}},
+\bauthor{\bsnm{Rennie}, \binits{J.M.}},
+\bauthor{\bsnm{Boylan}, \binits{G.B.}}:
+\batitle{Interobserver agreement for neonatal seizure detection using
+  multichannel {EEG}}.
+\bjtitle{Annals of Clinical and Translational Neurology}
+\bvolume{2}(\bissue{11}),
+\bfpage{1002}--\blpage{1011}
+(\byear{2015})
+\doiurl{10.1002/acn3.249}
+\end{barticle}
+\endbibitem
+
+%%% 7
+\bibitem[\protect\citeauthoryear{Temko et~al.}{2011}]{temko2011}
+\begin{barticle}
+\bauthor{\bsnm{Temko}, \binits{A.}},
+\bauthor{\bsnm{Thomas}, \binits{E.}},
+\bauthor{\bsnm{Marnane}, \binits{W.}},
+\bauthor{\bsnm{Lightbody}, \binits{G.}},
+\bauthor{\bsnm{Boylan}, \binits{G.B.}}:
+\batitle{{EEG}-based neonatal seizure detection with support vector machines}.
+\bjtitle{Clinical Neurophysiology}
+\bvolume{122}(\bissue{3}),
+\bfpage{464}--\blpage{473}
+(\byear{2011})
+\doiurl{10.1016/j.clinph.2010.06.034}
+\end{barticle}
+\endbibitem
+
+%%% 8
+\bibitem[\protect\citeauthoryear{Greene et~al.}{2008}]{greene2008}
+\begin{barticle}
+\bauthor{\bsnm{Greene}, \binits{B.R.}},
+\bauthor{\bsnm{Faul}, \binits{S.}},
+\bauthor{\bsnm{Marnane}, \binits{W.P.}},
+\bauthor{\bsnm{Lightbody}, \binits{G.}},
+\bauthor{\bsnm{Korotchikova}, \binits{I.}},
+\bauthor{\bsnm{Boylan}, \binits{G.B.}}:
+\batitle{A comparison of quantitative {EEG} features for neonatal seizure
+  detection}.
+\bjtitle{Clinical Neurophysiology}
+\bvolume{119}(\bissue{6}),
+\bfpage{1248}--\blpage{1261}
+(\byear{2008})
+\doiurl{10.1016/j.clinph.2008.02.001}
+\end{barticle}
+\endbibitem
+
+%%% 9
+\bibitem[\protect\citeauthoryear{Ansari et~al.}{2019}]{ansari2019}
+\begin{barticle}
+\bauthor{\bsnm{Ansari}, \binits{A.H.}},
+\bauthor{\bsnm{Cherian}, \binits{P.J.}},
+\bauthor{\bsnm{Caicedo}, \binits{A.}},
+\bauthor{\bsnm{Naulaers}, \binits{G.}},
+\bauthor{\bsnm{De~Vos}, \binits{M.}},
+\bauthor{\bsnm{Van~Huffel}, \binits{S.}}:
+\batitle{Neonatal seizure detection using deep convolutional neural networks}.
+\bjtitle{International Journal of Neural Systems}
+\bvolume{29}(\bissue{4}),
+\bfpage{1850011}
+(\byear{2019})
+\doiurl{10.1142/S0129065718500119}
+\end{barticle}
+\endbibitem
+
+%%% 10
+\bibitem[\protect\citeauthoryear{Kashefi~Amiri et~al.}{2025}]{kashefiamiri2025}
+\begin{botherref}
+\oauthor{\bsnm{Kashefi~Amiri}, \binits{H.}},
+\oauthor{\bsnm{Zarei}, \binits{M.}},
+\oauthor{\bsnm{Daliri}, \binits{M.R.}}:
+Epileptic seizure detection from electroencephalogram signals based on {1D}
+  {CNN-LSTM} deep learning model using discrete wavelet transform.
+Scientific Reports
+\textbf{15}
+(2025)
+\doiurl{10.1038/s41598-025-18479-9}
+\end{botherref}
+\endbibitem
+
+%%% 11
+\bibitem[\protect\citeauthoryear{Pan et~al.}{2024}]{pan2024}
+\begin{barticle}
+\bauthor{\bsnm{Pan}, \binits{Y.}},
+\bauthor{\bsnm{Dong}, \binits{F.}},
+\bauthor{\bsnm{Yao}, \binits{W.}},
+\bauthor{\bsnm{Meng}, \binits{X.}},
+\bauthor{\bsnm{Xu}, \binits{Y.}}:
+\batitle{Empirical mode decomposition for deep learning-based epileptic seizure
+  detection in few-shot scenario}.
+\bjtitle{IEEE Access}
+\bvolume{12},
+\bfpage{86583}--\blpage{86595}
+(\byear{2024})
+\doiurl{10.1109/ACCESS.2024.3415716}
+\end{barticle}
+\endbibitem
+
+%%% 12
+\bibitem[\protect\citeauthoryear{Stevenson et~al.}{2019}]{stevenson2017}
+\begin{barticle}
+\bauthor{\bsnm{Stevenson}, \binits{N.J.}},
+\bauthor{\bsnm{Tapani}, \binits{K.}},
+\bauthor{\bsnm{Lauronen}, \binits{L.}},
+\bauthor{\bsnm{Vanhatalo}, \binits{S.}}:
+\batitle{A dataset of neonatal {EEG} recordings with seizure annotations}.
+\bjtitle{Scientific Data}
+\bvolume{6},
+\bfpage{190039}
+(\byear{2019})
+\doiurl{10.1038/sdata.2019.39}
+\end{barticle}
+\endbibitem
+
+%%% 13
+\bibitem[\protect\citeauthoryear{Donoghue et~al.}{2020}]{donoghue2020}
+\begin{barticle}
+\bauthor{\bsnm{Donoghue}, \binits{T.}},
+\bauthor{\bsnm{Haller}, \binits{M.}},
+\bauthor{\bsnm{Peterson}, \binits{E.J.}},
+\bauthor{\bsnm{Varma}, \binits{P.}},
+\bauthor{\bsnm{Sebastian}, \binits{P.}},
+\bauthor{\bsnm{Gao}, \binits{R.}},
+\bauthor{\bsnm{Noto}, \binits{T.}},
+\bauthor{\bsnm{Lara}, \binits{A.H.}},
+\bauthor{\bsnm{Walz}, \binits{J.D.}},
+\bauthor{\bsnm{Knight}, \binits{R.T.}},
+\bauthor{\bsnm{Shestyuk}, \binits{A.}},
+\bauthor{\bsnm{Voytek}, \binits{B.}}:
+\batitle{Parameterizing neural power spectra into periodic and aperiodic
+  components}.
+\bjtitle{Nature Neuroscience}
+\bvolume{23}(\bissue{12}),
+\bfpage{1655}--\blpage{1665}
+(\byear{2020})
+\doiurl{10.1038/s41593-020-00744-x}
+\end{barticle}
+\endbibitem
+
+\end{thebibliography}
