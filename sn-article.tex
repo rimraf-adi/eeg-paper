@@ -134,7 +134,7 @@
 % 
 % \textbf{Conclusion:} The abstract serves both as a general introduction to the topic and as a brief, non-technical summary of the main results and their implications. The abstract must not include subheadings (unless expressly permitted in the journal's Instructions to Authors), equations or citations. As a guide the abstract should not exceed 200 words. Most journals do not set a hard limit however authors are advised to check the author instructions for the journal they are submitting to.}
 
-\keywords{keyword1, Keyword2, Keyword3, Keyword4}
+\keywords{Neonatal seizures, Electroencephalography, Power spectral density, Empirical mode decomposition, Neural network, Biomarker}
 
 %%\pacs[JEL Classification]{D8, H51}
 
@@ -516,48 +516,51 @@ Parallel to the development of automated classifiers, a substantial body of work
 
 \section{Methods}\label{sec11}
 
-% \subsection{Overview}
-% \subsection{Dataset Identification and Pre-processing}
-% \subsection{Power Spectral Density and Curve Fitting}
-% \subsection{Empirical Mode Decomposition}
+The methodology of this study centres on two distinct feature-extraction pipelines applied to neonatal EEG recordings. The first pipeline derives compact spectral descriptors by fitting a linear model to the log-transformed power spectral density (PSD) within each of the classical neurophysiological frequency bands. This parameterisation strategy---characterising a spectrum by its slope, midband-fit value, and intercept---has been validated in an entirely different biomedical domain: Sinha et al.\ demonstrated that the same trio of spectral parameters, extracted from multiwavelength photoacoustic signals, could reliably distinguish malignant prostate tissue from benign and normal specimens in an ex-vivo setting \cite{sinha2016}. Their success in a non-neural context motivates the hypothesis that these frequency-domain descriptors capture fundamental properties of spectral shape that generalise across signal modalities. The second pipeline employs Empirical Mode Decomposition (EMD) to decompose each EEG epoch into data-driven oscillatory components, from which energy- and frequency-based statistics are computed. Both feature sets are subsequently reduced to a common dimensionality via Principal Component Analysis and classified by an identical feedforward neural network, ensuring that any performance difference reflects the quality of the underlying features rather than architectural bias.
 
-Our research has utilized parameters extracted from the curve fitting of log-transformed power spectral density as a feature set for classification which were then compared with a separate set of features obtained through Empirical Mode Decomposition.
+\subsection{Dataset}\label{subsec:dataset}
 
-\subsection{Dataset}
+This study utilised a publicly available neonatal EEG corpus recorded at Helsinki University Hospital. The cohort comprised 79 neonates, of whom 39 had seizures confirmed through expert consensus annotation, while the remaining 40 served as non-seizure controls. Continuous multi-channel EEG was acquired for each infant, with recording durations spanning approximately one hour per subject (median 74 minutes; interquartile range 64--96 minutes). Seizure events were independently annotated by three qualified clinical neurophysiologists; only epochs receiving unanimous agreement from all three annotators were retained as seizure ground truth, and any epochs with partial or conflicting annotations were excluded from the analysis to minimise label noise. Annotations were exported at one-second temporal resolution, specifying onset time and duration but omitting spatial localisation or electrographic seizure type due to the export format.
 
-Our research used neonatal EEG data collected at Helsinki University Hospital. The cohort contained 79 infants, of whom 39 were confirmed to have seizures based on full-consensus annotation. Each EEG record spanned roughly an hour, with a median duration of 74 minutes (IQR 64–96 minutes). Seizure annotations were exported as text files containing onset times and durations at one-second resolution, incorporating information from all available EEG derivations. Because of this format, the exported annotations did not specify spatial characteristics or seizure type.
+To match the montage employed during the original annotation process, the raw referential recordings were re-referenced offline to an anterior--posterior bipolar configuration. This step ensured consistency between the derivations seen by the annotators and the signals presented to the automated pipeline, thereby guarding against artefactual discrepancies that could arise from montage mismatch.
 
-Only time segments in which all three expert annotators agreed on the presence of a seizure were retained as ground truth; any segments without unanimous agreement were removed from the dataset. The original referential montage was converted to a anterior-posterior bipolar configuration to match the montage used during the annotation process.
+\subsection{Log-transformed Power Spectral Density and Curve Fitting}\label{subsec:psd}
 
+Power spectral density quantifies how the energy of a signal is distributed across frequency, providing a compact summary of its oscillatory content. Because neurophysiological activity is conventionally partitioned into distinct frequency bands---each associated with different brain states and pathological signatures---the EEG signal was first pre-processed with a fourth-order Butterworth bandpass filter configured to isolate successive frequency ranges. Four standard bands were considered: delta (0.7--4~Hz), theta (4--8~Hz), alpha (8--13~Hz), and beta (13--30~Hz). Filtering each band independently yielded cleaner spectral estimates within the neurologically relevant ranges and suppressed out-of-band noise that could otherwise distort the subsequent analysis.
 
-\subsection{Log-transformed Power Spectral Density and Curve Fitting}
+For each filtered band and epoch, the power spectral density was estimated and converted to a logarithmic (decibel) scale. This transformation compresses the large dynamic range typical of EEG power spectra while linearising the characteristic $1/f^{-\alpha}$ decay, making it amenable to simple parametric modelling. A least-squares linear regression was then fitted to the log-power versus log-frequency curve within each band, producing a straight line that captures the dominant spectral trend of that band.
 
-Power spectral density provides a frequency-domain representation of signal energy, allowing broad trends in spectral shape to be described with compact quantitative measures. 
+From this fitted line, three scalar parameters were extracted per band: the \emph{slope}, quantifying the rate of spectral roll-off; the \emph{midband-fit} value, representing the predicted log-power at the geometric centre of the band; and the \emph{intercept}, indicating the baseline log-power level. This parameterisation directly follows the framework demonstrated by Sinha et al.\ in their photoacoustic tissue-classification study \cite{sinha2016}, where the same three spectral descriptors---slope, midband fit, and intercept---proved effective for differentiating malignant from benign and normal prostate tissue on the basis of frequency-domain signatures alone. By applying this proven spectral characterisation to neonatal EEG, the present work tests whether the same compact set of parameters can capture the spectral changes that distinguish seizure from non-seizure brain activity. With four frequency bands and three parameters per band, the full feature vector for each epoch consisted of twelve elements.
 
-A fourth-order Butterworth filter was applied to isolate the frequency components, allowing the signal to be separated into conventional brain-wave bands. This study focused specifically on the delta (0.7–4 Hz), theta (4–8 Hz), alpha (8–13 Hz), and beta (13–30 Hz) ranges to provide cleaner representations of activity within these neurologically relevant frequencies.
+\subsection{Empirical Mode Decomposition Feature Set}\label{subsec:emd}
 
+As a complementary, data-driven alternative to the spectral-fitting approach, Empirical Mode Decomposition (EMD) was employed to decompose each EEG epoch into a set of oscillatory components known as Intrinsic Mode Functions (IMFs). Unlike Fourier-based methods, which project the signal onto fixed sinusoidal bases, EMD adapts entirely to the local characteristics of the data, making it particularly suited to non-stationary signals such as neonatal EEG.
 
-After converting the spectrum to logarithmic scale for consistent scaling, linear regression was applied to model the overall spectral contour within the usable bandwidth. This approach produced a best-fit straight line capturing the dominant trend of the calibrated spectrum. From this line, three parameters were extracted for further analysis: the slope, the midband-fit value, and the intercept .
+The decomposition proceeds through an iterative sifting procedure. In each iteration, the local maxima and minima of the signal are identified and connected by cubic-spline interpolation to form upper and lower envelopes, respectively. The mean of these envelopes is subtracted from the signal, and the process repeats until the residual satisfies the narrow-band criterion defining a valid IMF---namely, that the number of extrema and zero crossings differs by at most one, and that the local mean of the envelopes is approximately zero. Once an IMF is extracted, the procedure is applied to the remainder, yielding successive components of decreasing characteristic frequency until the residual becomes monotonic.
 
-\subsection{Empirical Mode Decomposition feature set}
+To maintain a uniform feature-vector length across all epochs, only a fixed number of the leading IMFs were retained for analysis. From each retained IMF, four summary statistics were computed: the log-transformed energy, the mean instantaneous frequency obtained via the Hilbert analytic signal, the standard deviation of the instantaneous amplitude envelope, and the spectral entropy of the IMF's own power spectrum. These per-IMF descriptors were concatenated into a single feature vector per epoch, providing a compact yet informative representation of the signal's intrinsic oscillatory structure for downstream classification.
 
+\subsection{Evaluation}\label{subsec:evaluation}
 
+\subsubsection{Dimensionality Reduction and Statistical Testing}
 
-\subsection{Evaluation}
+Principal Component Analysis (PCA) was applied independently to each feature set to project both pipelines into a comparable, lower-dimensional space. This step removed redundant or correlated feature dimensions while retaining the principal variance-bearing components, ensuring that the subsequent classifier operated on representations of equivalent complexity regardless of the original feature-set size.
 
+To quantify the discriminative relevance of individual principal components, independent-samples Welch t-tests were conducted between the seizure and non-seizure groups for each component. The resulting t-statistics and associated p-values provided a transparent, interpretable assessment of which spectral or EMD-derived dimensions carried the greatest group-separability signal, complementing the opaque decision boundaries of the neural network classifier.
 
-Principal Component Analysis was applied to reduce the two feature sets to a comparable dimensionality, allowing both pipelines to be evaluated under equivalent dimensional constraints. This dimensionality reduction step helped eliminate redundancy while preserving the dominant variance-bearing components within each feature space. 
+\subsubsection{Classification Architecture}
 
-Following this, statistical comparisons were conducted using t-tests to assess the relevance of individual features, allowing an examination of which components differed meaningfully between seizure and non-seizure groups and providing insight into the discriminative value of the extracted vectors.
+An identical feedforward artificial neural network was used for both pipelines to ensure that any performance difference could be attributed to the feature representations rather than the classifier. The architecture consisted of three fully connected hidden layers with 128, 64, and 32 units, respectively. Each hidden layer was followed by batch normalisation to stabilise internal activations, a Rectified Linear Unit (ReLU) activation function to introduce non-linearity, and a dropout layer with a retention probability of 0.7 to mitigate overfitting. The output layer comprised a single unit with a softmax activation producing class-posterior probabilities for the seizure and non-seizure states.
 
+Training minimised the categorical cross-entropy loss with inverse-frequency class weights to counteract the severe imbalance between seizure and non-seizure epochs. The Adam optimiser was employed with a fixed learning rate of $1 \times 10^{-3}$ and a batch size of 64 samples. An early-stopping criterion monitored validation loss over a patience window of 10--25 epochs, halting training whenever no improvement was observed, with a hard cap of 100 epochs.
 
-An artificial neural network was used as the classifier for both feature pipelines, where each system used the same feedforward architecture to ensure comparability. The network accepted a feature vector and passed it through a series of fully connected layers with 128, 64, and 32 units, respectively, with each layer followed by batch normalisation to stabilise activations, a ReLU nonlinearity to introduce non-linearity and a dropout rate of 0.3 to limit overfitting. The final layer consisted of a single output with a softmax function to produce class probabilities for seizure and non-seizure states. Training was performed using cross-entropy loss with class weights adjusted to compensate for the inherent imbalance between seizure and non-seizure samples, and the optimisation procedure used the Adam algorithm with a learning rate of 0.001 to update network parameters. Batches of 64 samples were used throughout training, and an early-stopping criterion monitored validation loss, stopping training if no improvement was observed within 10–25 epochs, with training capped at a maximum of 100 epochs.
+\subsubsection{Post-processing and Threshold Optimisation}
 
-The softmax output probabilities generated by the network were subsequently processed with a moving-average filter to reduce short-term fluctuations and produce a smoother probability trajectory. This temporal smoothing helped suppress brief disturbances or isolated spikes that did not reflect sustained activity. After filtering, an optimal decision threshold was determined to separate seizure from non-seizure predictions, allowing the system to convert the smoothed probability estimate into a final binary classification.
+The raw softmax probabilities were smoothed with a causal moving-average filter to attenuate transient fluctuations and produce a temporally coherent probability trajectory. This step suppressed isolated spikes and brief disturbances that did not correspond to sustained electrographic activity. An optimal decision threshold was then determined on the validation set to maximise a chosen performance metric, converting the smoothed probability into a binary seizure/non-seizure classification.
 
-Neonatal EEG recordings exhibit severe class imbalance, as non-seizure epochs greatly exceed seizure epochs. To manage this, both classifiers employ an adaptive nearest-neighbour downsampling strategy designed to retain clinically relevant temporal structure. All seizure epochs are first preserved in full, ensuring that no positive examples are lost and then each non-seizure epoch is then assessed by measuring its temporal distance from the nearest seizure, providing a way to rank non-seizure samples based on their proximity to seizure activity.
+\subsubsection{Class-Imbalance Management}
 
-Using this ranking, the method selects the closest non-seizure epochs according to a target ratio defaulted to the  value 2.0. A minimum-ratio safeguard is applied so that non-seizure samples always exceed seizure samples numerically. Together, these steps reduce the degree of imbalance while retaining the temporal neighbourhood surrounding seizure events, preserving necessary context that may be important for classification.
+Neonatal EEG recordings are characterised by extreme class imbalance, with non-seizure epochs vastly outnumbering seizure epochs. To address this, an adaptive nearest-neighbour downsampling strategy was employed. All seizure epochs were retained in full, ensuring complete coverage of the positive class. Each non-seizure epoch was then scored according to its temporal proximity to the nearest seizure event, producing a ranking that prioritised boundary-adjacent non-seizure samples. The closest non-seizure epochs were selected according to a configurable target ratio (default 2.0), subject to a minimum-ratio safeguard guaranteeing that the non-seizure class always exceeded the seizure class in absolute count. This strategy reduced the magnitude of the imbalance while preserving the temporal context surrounding seizure transitions, which is important for the classifier to learn discriminative boundary features.
 
 
 
@@ -575,26 +578,26 @@ Using this ranking, the method selects the closest non-seizure epochs according 
 
 % If your manuscript includes potentially identifying patient/participant information, or if it describes human transplantation research, or if it reports results of a clinical trial then  additional information will be required. Please visit (\url{https://www.nature.com/nature-research/editorial-policies}) for Nature Portfolio journals, (\url{https://www.springer.com/gp/authors-editors/journal-author/journal-author-helpdesk/publishing-ethics/14214}) for Springer Nature journals, or (\url{https://www.biomedcentral.com/getpublished/editorial-policies\#ethics+and+consent}) for BMC.
 \section{Results}
-t-tests
-aggregate metrics
-thresholds and moving averages
+
+To assess the discriminative relevance of individual feature components, independent-samples t-tests were conducted between seizure and non-seizure groups for each principal component. Figures~\ref{fig:freq_t_stat} and~\ref{fig:freq_significance} display the t-statistics and corresponding negative log-transformed p-values for the frequency-domain features, while Figures~\ref{fig:emd_t_stat} and~\ref{fig:emd_significance} present the analogous results for the EMD features.
+
 \begin{figure}[h!]
     \centering
     % FREQ SIDE BY SIDE
     \begin{subfigure}{0.7\linewidth}
         \centering
         \includegraphics[width=\linewidth]{public/freq_t_stat.png}
-        \caption{Frequency Features : T-statistic}
+        \caption{Frequency features: t-statistic per principal component}
         \label{fig:freq_t_stat}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.7\linewidth}
         \centering
         \includegraphics[width=\linewidth]{public/freq_significance.png}
-        \caption{Frequency Features : -log(p)}
+        \caption{Frequency features: $-\log(p)$ per principal component}
         \label{fig:freq_significance}
     \end{subfigure}
-    \caption{Frequency-domain Results}
+    \caption{Statistical comparison of PCA-reduced frequency-domain features between seizure and non-seizure epochs.}
 \end{figure}
 
 \begin{figure}[h!]
@@ -603,18 +606,85 @@ thresholds and moving averages
     \begin{subfigure}{0.7\linewidth}
         \centering
         \includegraphics[width=\linewidth]{public/emd_t_stat.png}
-        \caption{EMD features : T-statistic}
+        \caption{EMD features: t-statistic per principal component}
         \label{fig:emd_t_stat}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.7\linewidth}
         \centering
         \includegraphics[width=\linewidth]{public/emd_significance.png}
-        \caption{EMD Features : -log(p)}
+        \caption{EMD features: $-\log(p)$ per principal component}
         \label{fig:emd_significance}
     \end{subfigure}
-    \caption{EMD Results}
+    \caption{Statistical comparison of PCA-reduced EMD features between seizure and non-seizure epochs.}
 \end{figure}
+
+Table~\ref{tab:freq_results} and Table~\ref{tab:emd_results} present the top five trials, ranked by validation accuracy, for the PCA-reduced frequency-domain and EMD feature pipelines, respectively. Each trial used a distinct random seed for data splitting to assess variability across folds.
+
+\begin{table}[h!]
+\caption{Top 5 trials -- PCA Frequency Features}\label{tab:freq_results}
+{\footnotesize
+\begin{tabular*}{\textwidth}{@{\extracolsep\fill}ccccccccccc}
+\toprule
+ & \multicolumn{5}{c}{Validation} & \multicolumn{5}{c}{Test} \\
+\cmidrule(lr){2-6} \cmidrule(lr){7-11}
+Trial & Acc & F1 & Prec & Rec & AUC & Acc & F1 & Prec & Rec & AUC \\
+\midrule
+0 & 0.762 & 0.688 & 0.683 & 0.694 & 0.807 & 0.738 & 0.731 & 0.683 & 0.786 & 0.858 \\
+2 & 0.721 & 0.322 & 0.843 & 0.199 & 0.698 & 0.711 & 0.480 & 0.835 & 0.337 & 0.699 \\
+8 & 0.685 & 0.554 & 0.891 & 0.402 & 0.767 & 0.718 & 0.300 & 0.864 & 0.182 & 0.808 \\
+5 & 0.663 & 0.687 & 0.599 & 0.805 & 0.728 & 0.411 & 0.457 & 0.696 & 0.340 & 0.464 \\
+1 & 0.639 & 0.438 & 0.614 & 0.340 & 0.658 & 0.603 & 0.503 & 0.931 & 0.345 & 0.820 \\
+\botrule
+\end{tabular*}
+}
+\end{table}
+
+The frequency-domain pipeline achieved its highest validation accuracy of 0.762 in Trial~0, which also yielded the strongest test-set performance (accuracy 0.738, AUC 0.858, F1 0.731). Across the top five trials, test AUC ranged from 0.464 to 0.858, indicating moderate variability depending on the data split but generally favourable discriminative capacity. Precision was consistently high in several trials (e.g.\ 0.864 in Trial~8, 0.931 in Trial~1), although this sometimes came at the expense of recall, reflecting a tendency toward conservative seizure predictions.
+
+\begin{table}[h!]
+\caption{Top 5 trials -- PCA EMD Features}\label{tab:emd_results}
+{\footnotesize
+\begin{tabular*}{\textwidth}{@{\extracolsep\fill}ccccccccccc}
+\toprule
+ & \multicolumn{5}{c}{Validation} & \multicolumn{5}{c}{Test} \\
+\cmidrule(lr){2-6} \cmidrule(lr){7-11}
+Trial & Acc & F1 & Prec & Rec & AUC & Acc & F1 & Prec & Rec & AUC \\
+\midrule
+0 & 0.672 & 0.647 & 0.546 & 0.792 & 0.790 & 0.678 & 0.703 & 0.603 & 0.843 & 0.779 \\
+5 & 0.655 & 0.656 & 0.605 & 0.717 & 0.712 & 0.388 & 0.392 & 0.711 & 0.270 & 0.508 \\
+3 & 0.652 & 0.741 & 0.650 & 0.861 & 0.660 & 0.590 & 0.541 & 0.432 & 0.724 & 0.673 \\
+8 & 0.646 & 0.638 & 0.636 & 0.639 & 0.674 & 0.602 & 0.497 & 0.430 & 0.588 & 0.643 \\
+4 & 0.632 & 0.583 & 0.668 & 0.517 & 0.698 & 0.604 & 0.652 & 0.576 & 0.753 & 0.685 \\
+\botrule
+\end{tabular*}
+}
+\end{table}
+
+The EMD pipeline exhibited lower overall accuracy than the frequency-domain approach, with a best validation accuracy of 0.672 and a corresponding test AUC of 0.779 (Trial~0). Notably, the EMD features tended to produce higher recall (e.g.\ 0.843 in Trial~0), suggesting a greater sensitivity to seizure events, albeit at the cost of reduced precision. Cross-trial variability was more pronounced, with test AUC values spanning 0.508 to 0.779.
+
+To further visualise the performance landscape, Figures~\ref{fig:radar_plots} presents radar charts comparing the validation metrics (Accuracy, F1, Precision, Recall, AUC) for the top performing trials of both pipelines.
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{public/radar_pca_freq.png}
+        \caption{Frequency Features}
+        \label{fig:radar_freq}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{public/radar_pca_emd.png}
+        \caption{EMD Features}
+        \label{fig:radar_emd}
+    \end{subfigure}
+    \caption{Radar charts illustrating the performance profile of the top trials. The frequency-domain pipeline (a) demonstrates a more balanced profile with consistently high Area Under the Curve (AUC) and Accuracy. In contrast, the EMD pipeline (b) exhibits a distinct skew towards Recall, indicating unmatched sensitivity to seizure events despite lower overall precision.}
+    \label{fig:radar_plots}
+\end{figure}
+
+The radar plots correspond with the tabular data, confirming that while the frequency-domain features provide a robust all-around classifier (larger overall polygon area), the EMD features capture complementary information that prioritises sensitivity. This structural difference in performance suggests that EMD-derived metrics may be particularly valuable in clinical screening contexts where missing a seizure (false negative) is more detrimental than a false alarm.
 
 
 Discussions should be brief and focused. In some disciplines use of Discussion or `Conclusion' is interchangeable. It is not mandatory to use both. Some journals prefer a section `Results and Discussion' followed by a section `Conclusion'. Please refer to Journal-level guidance for any specific requirements. 
@@ -629,78 +699,22 @@ In some disciplines use of Discussion or 'Conclusion' is interchangeable. It is 
 
 \bmhead{Supplementary information}
 
-If your article has accompanying supplementary file/s please state so here. 
-
-Authors reporting data from electrophoretic gels and blots should supply the full unprocessed scans for key as part of their Supplementary information. This may be requested by the editorial team/s if it is missing.
-
-Please refer to Journal-level guidance for any specific requirements.
+Not applicable.
 
 \bmhead{Acknowledgements}
 
-Acknowledgements are not compulsory. Where included they should be brief. Grant or contribution numbers may be acknowledged.
-
-Please refer to Journal-level guidance for any specific requirements.
+Not applicable.
 
 \section*{Declarations}
 
-Some journals require declarations to be submitted in a standardised format. Please check the Instructions for Authors of the journal to which you are submitting to see if you need to complete this section. If yes, your manuscript must contain the following sections under the heading `Declarations':
-
 \begin{itemize}
-\item Funding
-\item Conflict of interest/Competing interests (check journal-specific guidelines for which heading to use)
-\item Ethics approval and consent to participate
-\item Consent for publication
-\item Data availability 
-\item Materials availability
-\item Code availability 
-\item Author contribution
+\item \textbf{Funding:} Not applicable.
+\item \textbf{Conflict of interest:} The authors declare no competing interests.
+\item \textbf{Ethics approval:} Not applicable. This study used a publicly available, de-identified dataset.
+\item \textbf{Data availability:} The neonatal EEG dataset used in this study is publicly available from the Zenodo repository associated with Stevenson et al.\ (2019).
+\item \textbf{Code availability:} Not applicable.
+\item \textbf{Author contribution:} Not applicable.
 \end{itemize}
-
-\noindent
-If any of the sections are not relevant to your manuscript, please include the heading and write `Not applicable' for that section. 
-
-%%===================================================%%
-%% For presentation purpose, we have included        %%
-%% \bigskip command. Please ignore this.             %%
-%%===================================================%%
-\bigskip
-\begin{flushleft}%
-Editorial Policies for:
-
-\bigskip\noindent
-Springer journals and proceedings: \url{https://www.springer.com/gp/editorial-policies}
-
-\bigskip\noindent
-Nature Portfolio journals: \url{https://www.nature.com/nature-research/editorial-policies}
-
-\bigskip\noindent
-\textit{Scientific Reports}: \url{https://www.nature.com/srep/journal-policies/editorial-policies}
-
-\bigskip\noindent
-BMC journals: \url{https://www.biomedcentral.com/getpublished/editorial-policies}
-\end{flushleft}
-
-\begin{appendices}
-
-\section{Section title of first appendix}\label{secA1}
-
-An appendix contains supplementary information that is not an essential part of the text itself but which may be helpful in providing a more comprehensive understanding of the research problem or it is information that is too cumbersome to be included in the body of the paper.
-
-%%=============================================%%
-%% For submissions to Nature Portfolio Journals %%
-%% please use the heading ``Extended Data''.   %%
-%%=============================================%%
-
-%%=============================================================%%
-%% Sample for another appendix section			       %%
-%%=============================================================%%
-
-%% \section{Example of another appendix section}\label{secA2}%
-%% Appendices may be used for helpful, supporting or essential material that would otherwise 
-%% clutter, break up or be distracting to the text. Appendices can consist of sections, figures, 
-%% tables and equations etc.
-
-\end{appendices}
 
 %%===========================================================================================%%
 %% If you are submitting to one of the Nature Portfolio journals, using the eJP submission   %%
