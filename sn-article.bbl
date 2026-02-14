@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{15}
+\begin{thebibliography}{16}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -313,6 +313,29 @@ Scientific Reports
 \bfpage{2165}--\blpage{2177}
 (\byear{2016})
 \doiurl{10.7863/ultra.15.11067}
+\end{barticle}
+\endbibitem
+
+%%% 16
+\bibitem[\protect\citeauthoryear{Huang et~al.}{1998}]{huang1998}
+\begin{barticle}
+\bauthor{\bsnm{Huang}, \binits{N.E.}},
+\bauthor{\bsnm{Shen}, \binits{Z.}},
+\bauthor{\bsnm{Long}, \binits{S.R.}},
+\bauthor{\bsnm{Wu}, \binits{M.C.}},
+\bauthor{\bsnm{Shih}, \binits{H.H.}},
+\bauthor{\bsnm{Zheng}, \binits{Q.}},
+\bauthor{\bsnm{Yen}, \binits{N.-C.}},
+\bauthor{\bsnm{Tung}, \binits{C.C.}},
+\bauthor{\bsnm{Liu}, \binits{H.H.}}:
+\batitle{The empirical mode decomposition and the {Hilbert} spectrum for
+  nonlinear and non-stationary time series analysis}.
+\bjtitle{Proceedings of the Royal Society of London. Series A: Mathematical,
+  Physical and Engineering Sciences}
+\bvolume{454}(\bissue{1971}),
+\bfpage{903}--\blpage{995}
+(\byear{1998})
+\doiurl{10.1098/rspa.1998.0193}
 \end{barticle}
 \endbibitem
 
