@@ -721,7 +721,15 @@ To examine the performance landscape further, we generated radar charts. Figure~
         \caption{EMD Features}
         \label{fig:radar_emd}
     \end{subfigure}
-    \caption{Radar charts illustrating the performance profile of the top trials. The frequency-domain pipeline (a) demonstrates a more balanced profile with high Area Under the Curve (AUC) and Accuracy. In contrast, the EMD pipeline (b) exhibits a distinct skew towards Recall, indicating superior sensitivity to seizure events despite lower overall precision.}
+    
+    \vspace{1em}
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{public/radar_pca_wavelet.png}
+        \caption{Wavelet Features}
+        \label{fig:radar_wavelet}
+    \end{subfigure}
+    \caption{Radar charts illustrating the performance profile of the top trials. The frequency-domain pipeline (a) demonstrates a more balanced profile with high Area Under the Curve (AUC) and Accuracy. The EMD pipeline (b) exhibits a distinct skew towards Recall, indicating superior sensitivity to seizure events despite lower overall precision. The Wavelet pipeline (c) presents an intermediate profile, capturing complementary spectral features.}
     \label{fig:radar_plots}
 \end{figure}
 
