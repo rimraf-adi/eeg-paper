@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{17}
+\begin{thebibliography}{19}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -177,23 +177,6 @@
 \endbibitem
 
 %%% 8
-\bibitem[\protect\citeauthoryear{Temko et~al.}{2011}]{temko2011}
-\begin{barticle}
-\bauthor{\bsnm{Temko}, \binits{A.}},
-\bauthor{\bsnm{Thomas}, \binits{E.}},
-\bauthor{\bsnm{Marnane}, \binits{W.}},
-\bauthor{\bsnm{Lightbody}, \binits{G.}},
-\bauthor{\bsnm{Boylan}, \binits{G.B.}}:
-\batitle{{EEG}-based neonatal seizure detection with support vector machines}.
-\bjtitle{Clinical Neurophysiology}
-\bvolume{122}(\bissue{3}),
-\bfpage{464}--\blpage{473}
-(\byear{2011})
-\doiurl{10.1016/j.clinph.2010.06.034}
-\end{barticle}
-\endbibitem
-
-%%% 9
 \bibitem[\protect\citeauthoryear{Greene et~al.}{2008}]{greene2008}
 \begin{barticle}
 \bauthor{\bsnm{Greene}, \binits{B.R.}},
@@ -212,111 +195,54 @@
 \end{barticle}
 \endbibitem
 
-%%% 10
-\bibitem[\protect\citeauthoryear{Ansari et~al.}{2019}]{ansari2019}
+%%% 9
+\bibitem[\protect\citeauthoryear{Temko et~al.}{2011}]{temko2011}
 \begin{barticle}
-\bauthor{\bsnm{Ansari}, \binits{A.H.}},
-\bauthor{\bsnm{Cherian}, \binits{P.J.}},
-\bauthor{\bsnm{Caicedo}, \binits{A.}},
-\bauthor{\bsnm{Naulaers}, \binits{G.}},
-\bauthor{\bsnm{De~Vos}, \binits{M.}},
-\bauthor{\bsnm{Van~Huffel}, \binits{S.}}:
-\batitle{Neonatal seizure detection using deep convolutional neural networks}.
-\bjtitle{International Journal of Neural Systems}
-\bvolume{29}(\bissue{4}),
-\bfpage{1850011}
-(\byear{2019})
-\doiurl{10.1142/S0129065718500119}
+\bauthor{\bsnm{Temko}, \binits{A.}},
+\bauthor{\bsnm{Thomas}, \binits{E.}},
+\bauthor{\bsnm{Marnane}, \binits{W.}},
+\bauthor{\bsnm{Lightbody}, \binits{G.}},
+\bauthor{\bsnm{Boylan}, \binits{G.B.}}:
+\batitle{{EEG}-based neonatal seizure detection with support vector machines}.
+\bjtitle{Clinical Neurophysiology}
+\bvolume{122}(\bissue{3}),
+\bfpage{464}--\blpage{473}
+(\byear{2011})
+\doiurl{10.1016/j.clinph.2010.06.034}
+\end{barticle}
+\endbibitem
+
+%%% 10
+\bibitem[\protect\citeauthoryear{Adeli et~al.}{2003}]{adeli2003}
+\begin{barticle}
+\bauthor{\bsnm{Adeli}, \binits{H.}},
+\bauthor{\bsnm{Zhou}, \binits{Z.}},
+\bauthor{\bsnm{Dadmehr}, \binits{N.}}:
+\batitle{Analysis of {EEG} records in an epileptic patient using wavelet
+  transform}.
+\bjtitle{Journal of Neuroscience Methods}
+\bvolume{123}(\bissue{1}),
+\bfpage{69}--\blpage{87}
+(\byear{2003})
+\doiurl{10.1016/S0165-0270(02)00340-0}
 \end{barticle}
 \endbibitem
 
 %%% 11
-\bibitem[\protect\citeauthoryear{Kashefi~Amiri et~al.}{2025}]{kashefiamiri2025}
-\begin{botherref}
-\oauthor{\bsnm{Kashefi~Amiri}, \binits{H.}},
-\oauthor{\bsnm{Zarei}, \binits{M.}},
-\oauthor{\bsnm{Daliri}, \binits{M.R.}}:
-Epileptic seizure detection from electroencephalogram signals based on {1D}
-  {CNN-LSTM} deep learning model using discrete wavelet transform.
-Scientific Reports
-\textbf{15}
-(2025)
-\doiurl{10.1038/s41598-025-18479-9}
-\end{botherref}
+\bibitem[\protect\citeauthoryear{Subasi}{2007}]{subasi2007}
+\begin{barticle}
+\bauthor{\bsnm{Subasi}, \binits{A.}}:
+\batitle{{EEG} signal classification using wavelet feature extraction and a
+  mixture of expert model}.
+\bjtitle{Expert Systems with Applications}
+\bvolume{32}(\bissue{4}),
+\bfpage{1084}--\blpage{1093}
+(\byear{2007})
+\doiurl{10.1016/j.eswa.2006.02.005}
+\end{barticle}
 \endbibitem
 
 %%% 12
-\bibitem[\protect\citeauthoryear{Pan et~al.}{2024}]{pan2024}
-\begin{barticle}
-\bauthor{\bsnm{Pan}, \binits{Y.}},
-\bauthor{\bsnm{Dong}, \binits{F.}},
-\bauthor{\bsnm{Yao}, \binits{W.}},
-\bauthor{\bsnm{Meng}, \binits{X.}},
-\bauthor{\bsnm{Xu}, \binits{Y.}}:
-\batitle{Empirical mode decomposition for deep learning-based epileptic seizure
-  detection in few-shot scenario}.
-\bjtitle{IEEE Access}
-\bvolume{12},
-\bfpage{86583}--\blpage{86595}
-(\byear{2024})
-\doiurl{10.1109/ACCESS.2024.3415716}
-\end{barticle}
-\endbibitem
-
-%%% 13
-\bibitem[\protect\citeauthoryear{Stevenson et~al.}{2019}]{stevenson2017}
-\begin{barticle}
-\bauthor{\bsnm{Stevenson}, \binits{N.J.}},
-\bauthor{\bsnm{Tapani}, \binits{K.}},
-\bauthor{\bsnm{Lauronen}, \binits{L.}},
-\bauthor{\bsnm{Vanhatalo}, \binits{S.}}:
-\batitle{A dataset of neonatal {EEG} recordings with seizure annotations}.
-\bjtitle{Scientific Data}
-\bvolume{6},
-\bfpage{190039}
-(\byear{2019})
-\doiurl{10.1038/sdata.2019.39} .
-\bcomment{Describes spectral characteristics used in seizure analysis}
-\end{barticle}
-\endbibitem
-
-%%% 14
-\bibitem[\protect\citeauthoryear{Lloyd et~al.}{2021}]{lloyd2021}
-\begin{barticle}
-\bauthor{\bsnm{Lloyd}, \binits{R.O.}},
-\bauthor{\bsnm{O'Toole}, \binits{J.M.}},
-\bauthor{\bsnm{Pavlidis}, \binits{E.}},
-\bauthor{\bsnm{Filan}, \binits{P.M.}},
-\bauthor{\bsnm{Boylan}, \binits{G.B.}}:
-\batitle{Electrographic seizures during the early postnatal period in preterm
-  infants}.
-\bjtitle{The Journal of Pediatrics}
-\bvolume{229},
-\bfpage{148}--\blpage{1551}
-(\byear{2021})
-\doiurl{10.1016/j.jpeds.2020.09.067}
-\end{barticle}
-\endbibitem
-
-%%% 15
-\bibitem[\protect\citeauthoryear{Sinha et~al.}{2016}]{sinha2016}
-\begin{barticle}
-\bauthor{\bsnm{Sinha}, \binits{S.}},
-\bauthor{\bsnm{Rao}, \binits{N.A.}},
-\bauthor{\bsnm{Chinni}, \binits{B.K.}},
-\bauthor{\bsnm{Dogra}, \binits{V.S.}}:
-\batitle{Evaluation of frequency domain analysis of a multiwavelength
-  photoacoustic signal for differentiating malignant from benign and normal
-  prostates: Ex vivo study with human prostates}.
-\bjtitle{Journal of Ultrasound in Medicine}
-\bvolume{35}(\bissue{10}),
-\bfpage{2165}--\blpage{2177}
-(\byear{2016})
-\doiurl{10.7863/ultra.15.11067}
-\end{barticle}
-\endbibitem
-
-%%% 16
 \bibitem[\protect\citeauthoryear{Huang et~al.}{1998}]{huang1998}
 \begin{barticle}
 \bauthor{\bsnm{Huang}, \binits{N.E.}},
@@ -339,7 +265,111 @@ Scientific Reports
 \end{barticle}
 \endbibitem
 
+%%% 13
+\bibitem[\protect\citeauthoryear{Pan et~al.}{2024}]{pan2024}
+\begin{barticle}
+\bauthor{\bsnm{Pan}, \binits{Y.}},
+\bauthor{\bsnm{Dong}, \binits{F.}},
+\bauthor{\bsnm{Yao}, \binits{W.}},
+\bauthor{\bsnm{Meng}, \binits{X.}},
+\bauthor{\bsnm{Xu}, \binits{Y.}}:
+\batitle{Empirical mode decomposition for deep learning-based epileptic seizure
+  detection in few-shot scenario}.
+\bjtitle{IEEE Access}
+\bvolume{12},
+\bfpage{86583}--\blpage{86595}
+(\byear{2024})
+\doiurl{10.1109/ACCESS.2024.3415716}
+\end{barticle}
+\endbibitem
+
+%%% 14
+\bibitem[\protect\citeauthoryear{Ansari et~al.}{2019}]{ansari2019}
+\begin{barticle}
+\bauthor{\bsnm{Ansari}, \binits{A.H.}},
+\bauthor{\bsnm{Cherian}, \binits{P.J.}},
+\bauthor{\bsnm{Caicedo}, \binits{A.}},
+\bauthor{\bsnm{Naulaers}, \binits{G.}},
+\bauthor{\bsnm{De~Vos}, \binits{M.}},
+\bauthor{\bsnm{Van~Huffel}, \binits{S.}}:
+\batitle{Neonatal seizure detection using deep convolutional neural networks}.
+\bjtitle{International Journal of Neural Systems}
+\bvolume{29}(\bissue{4}),
+\bfpage{1850011}
+(\byear{2019})
+\doiurl{10.1142/S0129065718500119}
+\end{barticle}
+\endbibitem
+
+%%% 15
+\bibitem[\protect\citeauthoryear{Kashefi~Amiri et~al.}{2025}]{kashefiamiri2025}
+\begin{botherref}
+\oauthor{\bsnm{Kashefi~Amiri}, \binits{H.}},
+\oauthor{\bsnm{Zarei}, \binits{M.}},
+\oauthor{\bsnm{Daliri}, \binits{M.R.}}:
+Epileptic seizure detection from electroencephalogram signals based on {1D}
+  {CNN-LSTM} deep learning model using discrete wavelet transform.
+Scientific Reports
+\textbf{15}
+(2025)
+\doiurl{10.1038/s41598-025-18479-9}
+\end{botherref}
+\endbibitem
+
+%%% 16
+\bibitem[\protect\citeauthoryear{Stevenson et~al.}{2019}]{stevenson2017}
+\begin{barticle}
+\bauthor{\bsnm{Stevenson}, \binits{N.J.}},
+\bauthor{\bsnm{Tapani}, \binits{K.}},
+\bauthor{\bsnm{Lauronen}, \binits{L.}},
+\bauthor{\bsnm{Vanhatalo}, \binits{S.}}:
+\batitle{A dataset of neonatal {EEG} recordings with seizure annotations}.
+\bjtitle{Scientific Data}
+\bvolume{6},
+\bfpage{190039}
+(\byear{2019})
+\doiurl{10.1038/sdata.2019.39} .
+\bcomment{Describes spectral characteristics used in seizure analysis}
+\end{barticle}
+\endbibitem
+
 %%% 17
+\bibitem[\protect\citeauthoryear{Lloyd et~al.}{2021}]{lloyd2021}
+\begin{barticle}
+\bauthor{\bsnm{Lloyd}, \binits{R.O.}},
+\bauthor{\bsnm{O'Toole}, \binits{J.M.}},
+\bauthor{\bsnm{Pavlidis}, \binits{E.}},
+\bauthor{\bsnm{Filan}, \binits{P.M.}},
+\bauthor{\bsnm{Boylan}, \binits{G.B.}}:
+\batitle{Electrographic seizures during the early postnatal period in preterm
+  infants}.
+\bjtitle{The Journal of Pediatrics}
+\bvolume{229},
+\bfpage{148}--\blpage{1551}
+(\byear{2021})
+\doiurl{10.1016/j.jpeds.2020.09.067}
+\end{barticle}
+\endbibitem
+
+%%% 18
+\bibitem[\protect\citeauthoryear{Sinha et~al.}{2016}]{sinha2016}
+\begin{barticle}
+\bauthor{\bsnm{Sinha}, \binits{S.}},
+\bauthor{\bsnm{Rao}, \binits{N.A.}},
+\bauthor{\bsnm{Chinni}, \binits{B.K.}},
+\bauthor{\bsnm{Dogra}, \binits{V.S.}}:
+\batitle{Evaluation of frequency domain analysis of a multiwavelength
+  photoacoustic signal for differentiating malignant from benign and normal
+  prostates: Ex vivo study with human prostates}.
+\bjtitle{Journal of Ultrasound in Medicine}
+\bvolume{35}(\bissue{10}),
+\bfpage{2165}--\blpage{2177}
+(\byear{2016})
+\doiurl{10.7863/ultra.15.11067}
+\end{barticle}
+\endbibitem
+
+%%% 19
 \bibitem[\protect\citeauthoryear{Daubechies}{1992}]{daubechies1992}
 \begin{bbook}
 \bauthor{\bsnm{Daubechies}, \binits{I.}}:
