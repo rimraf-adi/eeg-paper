@@ -154,8 +154,6 @@ Automated detection has traditionally relied on handcrafted features extracted f
 
 Deep learning methods have also been applied to neonatal seizure detection, with convolutional and recurrent architectures learning representations directly from raw EEG \cite{ansari2019, kashefiamiri2025}. However, these models typically require large labelled datasets---scarce in neonatal neurology---and offer limited interpretability. When the clinical goal is to identify physiologically meaningful biomarkers rather than to maximise classification accuracy alone, handcrafted features remain the preferred approach.
 
-The search for interpretable EEG biomarkers remains a clinical priority. PSD analysis has revealed that seizure epochs deviate from the typical $1/f^{-\alpha}$ spectral decay, with elevated power in the theta range (3--12~Hz) \cite{stevenson2017}. Delta-band power has been linked to encephalopathy severity and early seizure risk \cite{lloyd2021}. Sinha et al.\ demonstrated that three compact spectral descriptors---slope, midband-fit, and intercept---derived from log-transformed PSD could reliably distinguish tissue types in photoacoustic imaging \cite{sinha2016}, suggesting these parameters capture fundamental properties of spectral shape that may transfer across biomedical domains. Despite these advances, no systematic comparison has evaluated handcrafted features from multiple decomposition paradigms---frequency-domain curve fitting, EMD, and discrete wavelet transform---within a unified framework for neonatal seizure biomarker discovery. This study addresses that gap.
-
 
 % \section{Results}\label{sec2}
 
