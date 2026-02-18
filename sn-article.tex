@@ -660,24 +660,41 @@ We assessed the discriminative power of individual feature components. Independe
     \caption{Statistical comparison of PCA-reduced EMD features between seizure and non-seizure epochs.}
 \end{figure}
 
-Tables~\ref{tab:freq_results} and~\ref{tab:emd_results} list the top five trials for each pipeline. We ranked them by validation accuracy. Every trial used a unique random seed for data splitting. This allowed us to assess variability across different folds.
+Tables~\ref{tab:freq_val}--\ref{tab:emd_test} list the top five trials for the frequency and EMD pipelines. We ranked them by validation accuracy. Every trial used a unique random seed for data splitting. This allowed us to assess variability across different folds.
 
 \begin{table}[h!]
-\caption{Top 5 trials -- PCA Frequency Features}\label{tab:freq_results}
+\caption{PCA Frequency Features -- Validation}\label{tab:freq_val}
 {\footnotesize
-\begin{tabular*}{\textwidth}{@{\extracolsep\fill}ccccccccccc}
+\begin{tabular*}{\textwidth}{@{\extracolsep\fill}cccccc}
 \toprule
- & \multicolumn{5}{c}{Validation} & \multicolumn{5}{c}{Test} \\
-\cmidrule(lr){2-6} \cmidrule(lr){7-11}
-Trial & Acc & F1 & Prec & Rec & AUC & Acc & F1 & Prec & Rec & AUC \\
+Trial & Acc & F1 & Prec & Rec & AUC \\
 \midrule
-\textbf{0} & \textbf{0.762} & \textbf{0.688} & \textbf{0.683} & \textbf{0.694} & \textbf{0.807} & \textbf{0.738} & \textbf{0.731} & \textbf{0.683} & \textbf{0.786} & \textbf{0.858} \\
-2 & 0.721 & 0.322 & 0.843 & 0.199 & 0.698 & 0.711 & 0.480 & 0.835 & 0.337 & 0.699 \\
-8 & 0.685 & 0.554 & 0.891 & 0.402 & 0.767 & 0.718 & 0.300 & 0.864 & 0.182 & 0.808 \\
-5 & 0.663 & 0.687 & 0.599 & 0.805 & 0.728 & 0.411 & 0.457 & 0.696 & 0.340 & 0.464 \\
-1 & 0.639 & 0.438 & 0.614 & 0.340 & 0.658 & 0.603 & 0.503 & 0.931 & 0.345 & 0.820 \\
+\textbf{0} & \textbf{0.762} & \textbf{0.688} & \textbf{0.683} & \textbf{0.694} & \textbf{0.807} \\
+2 & 0.721 & 0.322 & 0.843 & 0.199 & 0.698 \\
+8 & 0.685 & 0.554 & 0.891 & 0.402 & 0.767 \\
+5 & 0.663 & 0.687 & 0.599 & 0.805 & 0.728 \\
+1 & 0.639 & 0.438 & 0.614 & 0.340 & 0.658 \\
 \midrule
-$\mu{\pm}\sigma$ & $0.694{\pm}0.049$ & $0.538{\pm}0.159$ & $0.726{\pm}0.134$ & $0.488{\pm}0.253$ & $0.732{\pm}0.058$ & $0.636{\pm}0.136$ & $0.494{\pm}0.154$ & $0.802{\pm}0.108$ & $0.398{\pm}0.228$ & $0.730{\pm}0.160$ \\
+$\mu{\pm}\sigma$ & $0.694{\pm}0.049$ & $0.538{\pm}0.159$ & $0.726{\pm}0.134$ & $0.488{\pm}0.253$ & $0.732{\pm}0.058$ \\
+\botrule
+\end{tabular*}
+}
+\end{table}
+
+\begin{table}[h!]
+\caption{PCA Frequency Features -- Test}\label{tab:freq_test}
+{\footnotesize
+\begin{tabular*}{\textwidth}{@{\extracolsep\fill}cccccc}
+\toprule
+Trial & Acc & F1 & Prec & Rec & AUC \\
+\midrule
+\textbf{0} & \textbf{0.738} & \textbf{0.731} & \textbf{0.683} & \textbf{0.786} & \textbf{0.858} \\
+2 & 0.711 & 0.480 & 0.835 & 0.337 & 0.699 \\
+8 & 0.718 & 0.300 & 0.864 & 0.182 & 0.808 \\
+5 & 0.411 & 0.457 & 0.696 & 0.340 & 0.464 \\
+1 & 0.603 & 0.503 & 0.931 & 0.345 & 0.820 \\
+\midrule
+$\mu{\pm}\sigma$ & $0.636{\pm}0.136$ & $0.494{\pm}0.154$ & $0.802{\pm}0.108$ & $0.398{\pm}0.228$ & $0.730{\pm}0.160$ \\
 \botrule
 \end{tabular*}
 }
@@ -686,21 +703,38 @@ $\mu{\pm}\sigma$ & $0.694{\pm}0.049$ & $0.538{\pm}0.159$ & $0.726{\pm}0.134$ & $
 The frequency-domain pipeline performed best in Trial 0. It reached a validation accuracy of 0.762. This trial also delivered the strongest test results: 0.738 accuracy, 0.858 AUC, and 0.731 F1 score. Test AUC across the top five trials ranged from 0.464 to 0.858. This indicates moderate sensitivity to the data split. However, discriminative capacity generally remained favourable. Several trials showed consistently high precision. For instance, Trial 8 achieved 0.864 and Trial 1 reached 0.931. High precision sometimes reduced recall. This reflects a conservative tendency in seizure prediction.
 
 \begin{table}[h!]
-\caption{Top 5 trials -- PCA EMD Features}\label{tab:emd_results}
+\caption{PCA EMD Features -- Validation}\label{tab:emd_val}
 {\footnotesize
-\begin{tabular*}{\textwidth}{@{\extracolsep\fill}ccccccccccc}
+\begin{tabular*}{\textwidth}{@{\extracolsep\fill}cccccc}
 \toprule
- & \multicolumn{5}{c}{Validation} & \multicolumn{5}{c}{Test} \\
-\cmidrule(lr){2-6} \cmidrule(lr){7-11}
-Trial & Acc & F1 & Prec & Rec & AUC & Acc & F1 & Prec & Rec & AUC \\
+Trial & Acc & F1 & Prec & Rec & AUC \\
 \midrule
-\textbf{0} & \textbf{0.672} & \textbf{0.647} & \textbf{0.546} & \textbf{0.792} & \textbf{0.790} & \textbf{0.678} & \textbf{0.703} & \textbf{0.603} & \textbf{0.843} & \textbf{0.779} \\
-5 & 0.655 & 0.656 & 0.605 & 0.717 & 0.712 & 0.388 & 0.392 & 0.711 & 0.270 & 0.508 \\
-3 & 0.652 & 0.741 & 0.650 & 0.861 & 0.660 & 0.590 & 0.541 & 0.432 & 0.724 & 0.673 \\
-8 & 0.646 & 0.638 & 0.636 & 0.639 & 0.674 & 0.602 & 0.497 & 0.430 & 0.588 & 0.643 \\
-4 & 0.632 & 0.583 & 0.668 & 0.517 & 0.698 & 0.604 & 0.652 & 0.576 & 0.753 & 0.685 \\
+\textbf{0} & \textbf{0.672} & \textbf{0.647} & \textbf{0.546} & \textbf{0.792} & \textbf{0.790} \\
+5 & 0.655 & 0.656 & 0.605 & 0.717 & 0.712 \\
+3 & 0.652 & 0.741 & 0.650 & 0.861 & 0.660 \\
+8 & 0.646 & 0.638 & 0.636 & 0.639 & 0.674 \\
+4 & 0.632 & 0.583 & 0.668 & 0.517 & 0.698 \\
 \midrule
-$\mu{\pm}\sigma$ & $0.651{\pm}0.015$ & $0.653{\pm}0.057$ & $0.621{\pm}0.048$ & $0.705{\pm}0.134$ & $0.707{\pm}0.051$ & $0.572{\pm}0.109$ & $0.557{\pm}0.124$ & $0.550{\pm}0.120$ & $0.636{\pm}0.224$ & $0.658{\pm}0.098$ \\
+$\mu{\pm}\sigma$ & $0.651{\pm}0.015$ & $0.653{\pm}0.057$ & $0.621{\pm}0.048$ & $0.705{\pm}0.134$ & $0.707{\pm}0.051$ \\
+\botrule
+\end{tabular*}
+}
+\end{table}
+
+\begin{table}[h!]
+\caption{PCA EMD Features -- Test}\label{tab:emd_test}
+{\footnotesize
+\begin{tabular*}{\textwidth}{@{\extracolsep\fill}cccccc}
+\toprule
+Trial & Acc & F1 & Prec & Rec & AUC \\
+\midrule
+\textbf{0} & \textbf{0.678} & \textbf{0.703} & \textbf{0.603} & \textbf{0.843} & \textbf{0.779} \\
+5 & 0.388 & 0.392 & 0.711 & 0.270 & 0.508 \\
+3 & 0.590 & 0.541 & 0.432 & 0.724 & 0.673 \\
+8 & 0.602 & 0.497 & 0.430 & 0.588 & 0.643 \\
+4 & 0.604 & 0.652 & 0.576 & 0.753 & 0.685 \\
+\midrule
+$\mu{\pm}\sigma$ & $0.572{\pm}0.109$ & $0.557{\pm}0.124$ & $0.550{\pm}0.120$ & $0.636{\pm}0.224$ & $0.658{\pm}0.098$ \\
 \botrule
 \end{tabular*}
 }
@@ -761,24 +795,41 @@ We also evaluated the DWT-based feature pipeline. Figures~\ref{fig:wavelet_t_sta
     \caption{Statistical comparison of PCA-reduced wavelet features between seizure and non-seizure epochs.}
 \end{figure}
 
-Table~\ref{tab:wavelet_results} lists the top five trials for the wavelet pipeline, ranked by validation accuracy.
+Tables~\ref{tab:wavelet_val} and~\ref{tab:wavelet_test} list the top five trials for the wavelet pipeline, ranked by validation accuracy.
 
 \begin{table}[h!]
-\caption{Top 5 trials -- PCA Adaptive Wavelet Features}\label{tab:wavelet_results}
+\caption{PCA Adaptive Wavelet Features -- Validation}\label{tab:wavelet_val}
 {\footnotesize
-\begin{tabular*}{\textwidth}{@{\extracolsep\fill}ccccccccccc}
+\begin{tabular*}{\textwidth}{@{\extracolsep\fill}cccccc}
 \toprule
- & \multicolumn{5}{c}{Validation} & \multicolumn{5}{c}{Test} \\
-\cmidrule(lr){2-6} \cmidrule(lr){7-11}
-Trial & Acc & F1 & Prec & Rec & AUC & Acc & F1 & Prec & Rec & AUC \\
+Trial & Acc & F1 & Prec & Rec & AUC \\
 \midrule
-\textbf{5} & \textbf{0.681} & \textbf{0.566} & \textbf{0.635} & \textbf{0.511} & \textbf{0.703} & 0.434 & 0.339 & 0.756 & 0.219 & 0.598 \\
-6 & 0.649 & 0.756 & 0.708 & 0.811 & 0.585 & 0.420 & 0.568 & 0.399 & 0.985 & 0.675 \\
-4 & 0.623 & 0.485 & 0.603 & 0.406 & 0.671 & 0.651 & 0.614 & 0.625 & 0.604 & 0.697 \\
-\textbf{3} & 0.609 & 0.566 & 0.617 & 0.524 & 0.654 & \textbf{0.681} & \textbf{0.564} & \textbf{0.517} & \textbf{0.620} & \textbf{0.727} \\
-1 & 0.582 & 0.564 & 0.472 & 0.702 & 0.645 & 0.621 & 0.607 & 0.593 & 0.620 & 0.671 \\
+\textbf{5} & \textbf{0.681} & \textbf{0.566} & \textbf{0.635} & \textbf{0.511} & \textbf{0.703} \\
+6 & 0.649 & 0.756 & 0.708 & 0.811 & 0.585 \\
+4 & 0.623 & 0.485 & 0.603 & 0.406 & 0.671 \\
+3 & 0.609 & 0.566 & 0.617 & 0.524 & 0.654 \\
+1 & 0.582 & 0.564 & 0.472 & 0.702 & 0.645 \\
 \midrule
-$\mu{\pm}\sigma$ & $0.629{\pm}0.038$ & $0.587{\pm}0.100$ & $0.607{\pm}0.086$ & $0.591{\pm}0.163$ & $0.652{\pm}0.043$ & $0.561{\pm}0.125$ & $0.538{\pm}0.114$ & $0.578{\pm}0.132$ & $0.610{\pm}0.271$ & $0.674{\pm}0.048$ \\
+$\mu{\pm}\sigma$ & $0.629{\pm}0.038$ & $0.587{\pm}0.100$ & $0.607{\pm}0.086$ & $0.591{\pm}0.163$ & $0.652{\pm}0.043$ \\
+\botrule
+\end{tabular*}
+}
+\end{table}
+
+\begin{table}[h!]
+\caption{PCA Adaptive Wavelet Features -- Test}\label{tab:wavelet_test}
+{\footnotesize
+\begin{tabular*}{\textwidth}{@{\extracolsep\fill}cccccc}
+\toprule
+Trial & Acc & F1 & Prec & Rec & AUC \\
+\midrule
+5 & 0.434 & 0.339 & 0.756 & 0.219 & 0.598 \\
+6 & 0.420 & 0.568 & 0.399 & 0.985 & 0.675 \\
+4 & 0.651 & 0.614 & 0.625 & 0.604 & 0.697 \\
+\textbf{3} & \textbf{0.681} & \textbf{0.564} & \textbf{0.517} & \textbf{0.620} & \textbf{0.727} \\
+1 & 0.621 & 0.607 & 0.593 & 0.620 & 0.671 \\
+\midrule
+$\mu{\pm}\sigma$ & $0.561{\pm}0.125$ & $0.538{\pm}0.114$ & $0.578{\pm}0.132$ & $0.610{\pm}0.271$ & $0.674{\pm}0.048$ \\
 \botrule
 \end{tabular*}
 }
