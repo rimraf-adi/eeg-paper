@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.1.3)  14 FEB 2026 15:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.1.3)  18 FEB 2026 23:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -753,42 +753,38 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4]
-<public/freq_t_stat.png, id=146, 2409.0pt x 1606.0pt>
-File: public/freq_t_stat.png Graphic file (type png)
-<use public/freq_t_stat.png>
-Package pdftex.def Info: public/freq_t_stat.png  used on input line 615.
-(pdftex.def)             Requested size: 260.39886pt x 173.59735pt.
-<public/freq_significance.png, id=148, 2409.0pt x 1606.0pt>
-File: public/freq_significance.png Graphic file (type png)
-<use public/freq_significance.png>
-Package pdftex.def Info: public/freq_significance.png  used on input line 622.
-(pdftex.def)             Requested size: 260.39886pt x 173.59735pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<public/emd_t_stat.png, id=149, 2409.0pt x 1606.0pt>
-File: public/emd_t_stat.png Graphic file (type png)
-<use public/emd_t_stat.png>
-Package pdftex.def Info: public/emd_t_stat.png  used on input line 634.
-(pdftex.def)             Requested size: 260.39886pt x 173.59735pt.
-<public/emd_significance.png, id=150, 2409.0pt x 1606.0pt>
-File: public/emd_significance.png Graphic file (type png)
-<use public/emd_significance.png>
-Package pdftex.def Info: public/emd_significance.png  used on input line 641.
-(pdftex.def)             Requested size: 260.39886pt x 173.59735pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5]
+<public/freq_t_stat.png, id=164, 2409.0pt x 1606.0pt>
+File: public/freq_t_stat.png Graphic file (type png)
+<use public/freq_t_stat.png>
+Package pdftex.def Info: public/freq_t_stat.png  used on input line 630.
+(pdftex.def)             Requested size: 260.39886pt x 173.59735pt.
+<public/freq_significance.png, id=166, 2409.0pt x 1606.0pt>
+File: public/freq_significance.png Graphic file (type png)
+<use public/freq_significance.png>
+Package pdftex.def Info: public/freq_significance.png  used on input line 637.
+(pdftex.def)             Requested size: 260.39886pt x 173.59735pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<public/emd_t_stat.png, id=167, 2409.0pt x 1606.0pt>
+File: public/emd_t_stat.png Graphic file (type png)
+<use public/emd_t_stat.png>
+Package pdftex.def Info: public/emd_t_stat.png  used on input line 649.
+(pdftex.def)             Requested size: 260.39886pt x 173.59735pt.
+<public/emd_significance.png, id=168, 2409.0pt x 1606.0pt>
+File: public/emd_significance.png Graphic file (type png)
+<use public/emd_significance.png>
+Package pdftex.def Info: public/emd_significance.png  used on input line 656.
+(pdftex.def)             Requested size: 260.39886pt x 173.59735pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -797,16 +793,16 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6 <./public/freq_t_stat.png> <./public/freq_significance.png>]
-<public/radar_pca_freq.png, id=170, 403.0257pt x 376.2858pt>
+ [6]
+<public/radar_pca_freq.png, id=182, 403.0257pt x 376.2858pt>
 File: public/radar_pca_freq.png Graphic file (type png)
 <use public/radar_pca_freq.png>
-Package pdftex.def Info: public/radar_pca_freq.png  used on input line 698.
+Package pdftex.def Info: public/radar_pca_freq.png  used on input line 713.
 (pdftex.def)             Requested size: 178.55841pt x 166.71458pt.
-<public/radar_pca_emd.png, id=171, 403.0257pt x 376.2858pt>
+<public/radar_pca_emd.png, id=183, 403.0257pt x 376.2858pt>
 File: public/radar_pca_emd.png Graphic file (type png)
 <use public/radar_pca_emd.png>
-Package pdftex.def Info: public/radar_pca_emd.png  used on input line 705.
+Package pdftex.def Info: public/radar_pca_emd.png  used on input line 720.
 (pdftex.def)             Requested size: 178.55841pt x 166.71458pt.
 
 
@@ -817,37 +813,75 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7 <./public/emd_t_stat.png> <./public/emd_significance.png>]
+ [7 <./public/freq_t_stat.png> <./public/freq_significance.png>]
+<public/wavelet_t_stat.png, id=196, 2409.0pt x 1606.0pt>
+File: public/wavelet_t_stat.png Graphic file (type png)
+<use public/wavelet_t_stat.png>
+Package pdftex.def Info: public/wavelet_t_stat.png  used on input line 738.
+(pdftex.def)             Requested size: 260.39886pt x 173.59735pt.
+<public/wavelet_significance.png, id=197, 2409.0pt x 1606.0pt>
+File: public/wavelet_significance.png Graphic file (type png)
+<use public/wavelet_significance.png>
+Package pdftex.def Info: public/wavelet_significance.png  used on input line 74
+5.
+(pdftex.def)             Requested size: 260.39886pt x 173.59735pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8 <./public/radar_pca_freq.png> <./public/radar_pca_emd.png>]
+ [8 <./public/emd_t_stat.png> <./public/emd_significance.png>]
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9 <./public/radar_pca_freq.png> <./public/radar_pca_emd.png>]
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10 <./public/wavelet_t_stat.png> <./public/wavelet_significance.png>]
 
 Package hyperref Warning: Difference (4) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 728.
+(hyperref)                than one, level fixed on input line 790.
 
 
 Package hyperref Warning: Difference (3) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 732.
+(hyperref)                than one, level fixed on input line 794.
 
 (./sn-article.bbl
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.en
-c}]
+ [11{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.e
+nc}]
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10])
+ [12]
+Underfull \hbox (badness 4353) in paragraph at lines 345--353
+[]\OT1/cmr/m/n/10 Daubechies, I.: Ten Lec-tures on Wavelets. Soci-ety for Indus
+-trial and
+ []
+
+
+Underfull \hbox (badness 2409) in paragraph at lines 345--353
+\OT1/cmr/m/n/10 Applied Math-e-mat-ics, Philadel-phia, PA (1992). [][]$https : 
+/ / doi . org / 10 . 1137 / 1 .
+ []
+
+)
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11]
+ [13]
 (./sn-article.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
@@ -862,16 +896,16 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `sn-article.out' has not changed.
-(rerunfilecheck)             Checksum: CA2BE98B87FC789BD2DB624E858B4BAF;2595.
+(rerunfilecheck)             Checksum: 40DB7306622E105295F38FAF6CF4A209;3034.
  ) 
 Here is how much of TeX's memory you used:
- 16070 strings out of 473190
- 252833 string characters out of 5715801
- 667491 words of memory out of 5000000
- 39012 multiletter control sequences out of 15000+600000
- 580693 words of font info for 122 fonts, out of 8000000 for 9000
+ 16112 strings out of 473190
+ 253826 string characters out of 5715801
+ 669998 words of memory out of 5000000
+ 39043 multiletter control sequences out of 15000+600000
+ 580861 words of font info for 123 fonts, out of 8000000 for 9000
  1151 hyphenation exceptions out of 8191
- 90i,11n,93p,1152b,646s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,11n,93p,1152b,644s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pf
 b></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy
 7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10
@@ -892,11 +926,12 @@ e/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2
 25/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2025/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/te
-xmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on sn-article.pdf (11 pages, 1136990 bytes).
+xmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2025/tex
+mf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on sn-article.pdf (13 pages, 1381912 bytes).
 PDF statistics:
- 334 PDF objects out of 1000 (max. 8388607)
- 264 compressed objects within 3 object streams
- 63 named destinations out of 1000 (max. 500000)
- 151 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 376 PDF objects out of 1000 (max. 8388607)
+ 298 compressed objects within 3 object streams
+ 73 named destinations out of 1000 (max. 500000)
+ 177 words of extra memory for PDF output out of 10000 (max. 10000000)
 

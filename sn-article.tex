@@ -566,6 +566,21 @@ From the extracted IMFs, we computed a set of six statistical and spectral featu
 
 These features formed the input to the classification pipeline.
 
+\subsection{Discrete Wavelet Transform Feature Set}\label{subsec:dwt}
+
+The Discrete Wavelet Transform (DWT) provides a multi-resolution analysis of time-series data by decomposing a signal into approximation and detail coefficients through successive filtering and downsampling \cite{daubechies1992}. Unlike EMD, which is entirely data-driven, the DWT uses a fixed mother wavelet as a basis function, offering repeatability and analytical guarantees.
+
+We applied the DWT to each one-second EEG epoch using the Daubechies-4 (\texttt{db4}) wavelet at decomposition level~3. This produced four sets of coefficients: one approximation band ($A_3$) and three detail bands ($D_3$, $D_2$, $D_1$). Each band captures oscillatory content at a progressively finer temporal scale. For a signal $x[n]$, the decomposition proceeds recursively:
+\begin{align}
+    c_{A,j}[k] &= \sum_n h[n - 2k]\, c_{A,j-1}[n] \\
+    c_{D,j}[k] &= \sum_n g[n - 2k]\, c_{A,j-1}[n]
+\end{align}
+where $h[\cdot]$ and $g[\cdot]$ are the low-pass and high-pass filters associated with the \texttt{db4} wavelet, and $j$ indexes the decomposition level.
+
+From each coefficient band, we computed the same six statistical features used for the EMD pipeline: energy, Wiener entropy (spectral flatness), skewness, kurtosis, PSD RMS, and standard deviation. With four bands and six features each, the wavelet feature vector contained 24 elements per channel per epoch.
+
+This feature set was processed through the same PCA dimensionality reduction and neural network classification pipeline described in Sections~\ref{subsec:evaluation}.
+
 \subsection{Evaluation}\label{subsec:evaluation}
 
 \subsubsection{Dimensionality Reduction and Statistical Testing}
@@ -711,6 +726,53 @@ To examine the performance landscape further, we generated radar charts. Figure~
 \end{figure}
 
 These charts align with the tabular findings. The frequency-domain features provide a robust all-around classifier, evidenced by the larger polygon area. EMD features capture complementary information. They prioritise sensitivity. This performance difference is structural. It suggests EMD-derived metrics may be valuable in screening. In such clinical contexts, missing a seizure is far worse than a false alarm.
+
+\subsection{Wavelet Feature Results}
+
+We also evaluated the DWT-based feature pipeline. Figures~\ref{fig:wavelet_t_stat} and~\ref{fig:wavelet_significance} present the t-statistics and significance levels for the PCA-reduced wavelet features.
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.7\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{public/wavelet_t_stat.png}
+        \caption{Wavelet features: t-statistic per principal component}
+        \label{fig:wavelet_t_stat}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.7\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{public/wavelet_significance.png}
+        \caption{Wavelet features: $-\log(p)$ per principal component}
+        \label{fig:wavelet_significance}
+    \end{subfigure}
+    \caption{Statistical comparison of PCA-reduced wavelet features between seizure and non-seizure epochs.}
+\end{figure}
+
+Table~\ref{tab:wavelet_results} lists the top five trials for the wavelet pipeline, ranked by validation accuracy.
+
+\begin{table}[h!]
+\caption{Top 5 trials -- PCA Adaptive Wavelet Features}\label{tab:wavelet_results}
+{\footnotesize
+\begin{tabular*}{\textwidth}{@{\extracolsep\fill}ccccccccccc}
+\toprule
+ & \multicolumn{5}{c}{Validation} & \multicolumn{5}{c}{Test} \\
+\cmidrule(lr){2-6} \cmidrule(lr){7-11}
+Trial & Acc & F1 & Prec & Rec & AUC & Acc & F1 & Prec & Rec & AUC \\
+\midrule
+5 & 0.681 & 0.566 & 0.635 & 0.511 & 0.703 & 0.434 & 0.339 & 0.756 & 0.219 & 0.598 \\
+6 & 0.649 & 0.756 & 0.708 & 0.811 & 0.585 & 0.420 & 0.568 & 0.399 & 0.985 & 0.675 \\
+4 & 0.623 & 0.485 & 0.603 & 0.406 & 0.671 & 0.651 & 0.614 & 0.625 & 0.604 & 0.697 \\
+3 & 0.609 & 0.566 & 0.617 & 0.524 & 0.654 & 0.681 & 0.564 & 0.517 & 0.620 & 0.727 \\
+1 & 0.582 & 0.564 & 0.472 & 0.702 & 0.645 & 0.621 & 0.607 & 0.593 & 0.620 & 0.671 \\
+\botrule
+\end{tabular*}
+}
+\end{table}
+
+The wavelet pipeline yielded moderate validation accuracy, peaking at 0.681 in Trial~5. Notably, validation-to-test generalisation varied considerably across trials. Trial~5, despite ranking first in validation accuracy, dropped to 0.434 on the test set. In contrast, Trial~3 demonstrated the strongest test performance with 0.681 accuracy and 0.727 AUC. Trial~4 also generalised well, achieving a test AUC of 0.697 and an F1 score of 0.614. Trial~6 showed extreme recall (0.985) on the test set but at the expense of precision (0.399), reflecting an aggressive detection strategy.
+
+Compared to the frequency-domain and EMD pipelines, the wavelet features exhibited a wider generalisation gap. This may reflect the higher-dimensional raw feature space (24 elements versus 12 for frequency), which—even after PCA—can introduce greater sensitivity to partition-specific structure. Nevertheless, the wavelet pipeline's best test AUC (0.727) remained competitive. The multi-resolution decomposition captured complementary spectral dynamics not accessible through global PSD fitting or adaptive EMD.
 
 
 Discussions should be brief and focused. In some disciplines use of Discussion or `Conclusion' is interchangeable. It is not mandatory to use both. Some journals prefer a section `Results and Discussion' followed by a section `Conclusion'. Please refer to Journal-level guidance for any specific requirements. 

@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{16}
+\begin{thebibliography}{17}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -337,6 +337,18 @@ Scientific Reports
 (\byear{1998})
 \doiurl{10.1098/rspa.1998.0193}
 \end{barticle}
+\endbibitem
+
+%%% 17
+\bibitem[\protect\citeauthoryear{Daubechies}{1992}]{daubechies1992}
+\begin{bbook}
+\bauthor{\bsnm{Daubechies}, \binits{I.}}:
+\bbtitle{Ten Lectures on Wavelets}.
+\bpublisher{Society for Industrial and Applied Mathematics},
+\blocation{Philadelphia, PA}
+(\byear{1992}).
+\doiurl{10.1137/1.9781611970104}
+\end{bbook}
 \endbibitem
 
 \end{thebibliography}
